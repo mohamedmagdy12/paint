@@ -24,21 +24,23 @@ public class buttons extends JPanel{
             public void actionPerformed(ActionEvent e) {
                 mouselisetner h = new mouselisetner(panel,"circle");
                 panel.addMouseListener(h);
+                panel.addMouseMotionListener(h);
                 panel.h = h;
             }
 
         });
 
-        this.btn2 = new JButton("square");
+        this.btn2 = new JButton("move");
         this.add(btn2);
         this.panel = panel;
         btn2.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                mouselisetner h = new mouselisetner(panel,"square");
+                movelisetner h = new movelisetner(panel);
                 panel.addMouseListener(h);
-                panel.h = h;
+                panel.addMouseMotionListener(h);
+                panel.g= h;
             }
 
         });

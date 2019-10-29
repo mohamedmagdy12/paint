@@ -7,14 +7,24 @@ import java.util.List;
 
 public class paintpanel extends JPanel {
     public  mouselisetner h;
-
-
+    public  movelisetner g;
+    int last = 0;
+    circle n;
     List<dummyshape>  s = new LinkedList<dummyshape>();
 
     public void addshape(dummyshape c) {
         s.add(c);
+    }
+    public void update(){
         repaint();
+    }
+    public void endlistener(){
         this.removeMouseListener(h);
+        this.removeMouseMotionListener(h);
+    }
+    public void endmovelistener(){
+        this.removeMouseListener(g);
+        this.removeMouseMotionListener(g);
     }
 
     @Override
@@ -22,6 +32,7 @@ public class paintpanel extends JPanel {
         super.paint(graphics);
         for(dummyshape c : s){
             c.draw(graphics);
+            n =(circle)c;
         }
     }
 }
