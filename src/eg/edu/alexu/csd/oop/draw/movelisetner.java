@@ -17,7 +17,7 @@ public class movelisetner extends MouseAdapter implements MouseListener, MouseMo
         super.mousePressed(e);
         int x = e.getX();
         int y = e.getY();
-        dragged = panel.n.in(x,y);
+        dragged = ((circle)panel.n).in(x,y);
     }
 
     @Override
@@ -32,8 +32,9 @@ public class movelisetner extends MouseAdapter implements MouseListener, MouseMo
         if(dragged){
             int x = e.getX();
             int y = e.getY();
-            panel.n.x = x - panel.n.diameter/2;
-            panel.n.y = y - panel.n.diameter/2;
+
+            panel.n.x = x - ((circle)panel.n).diameter/2;
+            panel.n.y = y - ((circle)panel.n).diameter/2;
             panel.update();
         }
     }

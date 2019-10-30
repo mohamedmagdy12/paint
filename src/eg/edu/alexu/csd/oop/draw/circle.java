@@ -11,7 +11,7 @@ public class circle extends dummyshape{
     }
 
     public circle(int x, int y, Color color, int diameter) {
-        super(x, y, color);
+        super(x, y, color,"circle");
         this.diameter = diameter;
     }
 

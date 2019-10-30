@@ -7,13 +7,14 @@ public class dummyshape implements Shape {
     int x;
     int y;
     private Color color;
-
+     String type;
 
     public dummyshape(){};
-    public dummyshape(int x,int y,Color color) {
+    public dummyshape(int x,int y,Color color,String type) {
         this.color = color;
         this.x = x;
         this.y =y;
+        this.type=type;
     }
 
     @Override

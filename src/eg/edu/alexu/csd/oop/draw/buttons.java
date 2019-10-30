@@ -1,6 +1,6 @@
 package eg.edu.alexu.csd.oop.draw;
 
-import java.awt.FlowLayout;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.concurrent.TimeUnit;
@@ -12,12 +12,15 @@ public class buttons extends JPanel{
     private JButton btn3;
     private JButton btn4;
     private JButton btn5;
+    private JButton btn6;
+    private JButton btn7;
     private paintpanel panel;
 
     public buttons(paintpanel panel) {
         this.btn1 = new JButton("circle");
         this.add(btn1);
         this.panel = panel;
+
         btn1.addActionListener(new ActionListener() {
 
             @Override
@@ -53,6 +56,7 @@ public class buttons extends JPanel{
             public void actionPerformed(ActionEvent e) {
                 mouselisetner h = new mouselisetner(panel,"rectangle");
                 panel.addMouseListener(h);
+                panel.addMouseMotionListener(h);
                 panel.h = h;
             }
 
@@ -66,6 +70,49 @@ public class buttons extends JPanel{
             public void actionPerformed(ActionEvent e) {
                 mouselisetner h = new mouselisetner(panel,"ellipse");
                 panel.addMouseListener(h);
+                panel.addMouseMotionListener(h);
+                panel.h = h;
+            }
+
+        });
+        this.btn5 = new JButton("square");
+        this.add(btn5);
+        this.panel = panel;
+        btn5.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mouselisetner h = new mouselisetner(panel,"square");
+                panel.addMouseListener(h);
+                panel.addMouseMotionListener(h);
+                panel.h = h;
+            }
+
+        });
+        this.btn6 = new JButton("line");
+        this.add(btn6);
+        this.panel = panel;
+        btn6.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mouselisetner h = new mouselisetner(panel,"line");
+                panel.addMouseListener(h);
+                panel.addMouseMotionListener(h);
+                panel.h = h;
+            }
+
+        });
+        this.btn7 = new JButton("triangle");
+        this.add(btn7);
+        this.panel = panel;
+        btn7.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mouselisetner h = new mouselisetner(panel,"triangle");
+                panel.addMouseListener(h);
+                panel.addMouseMotionListener(h);
                 panel.h = h;
             }
 

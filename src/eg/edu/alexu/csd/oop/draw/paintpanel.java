@@ -9,7 +9,7 @@ public class paintpanel extends JPanel {
     public  mouselisetner h;
     public  movelisetner g;
     int last = 0;
-    circle n;
+    dummyshape n;
     List<dummyshape>  s = new LinkedList<dummyshape>();
 
     public void addshape(dummyshape c) {
@@ -32,7 +32,18 @@ public class paintpanel extends JPanel {
         super.paint(graphics);
         for(dummyshape c : s){
             c.draw(graphics);
+            if(c.type=="circle"){
+
             n =(circle)c;
+            }
+            else if (c.type=="rectangle"){
+
+                n=(rectangle)c;
+            }
+            else if (c.type=="ellipse"){
+
+                n=(ellipse)c;
+            }
         }
     }
 }

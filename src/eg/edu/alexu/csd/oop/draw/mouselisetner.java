@@ -33,31 +33,100 @@ public class mouselisetner extends MouseAdapter implements MouseListener, MouseM
         super.mousePressed(e);
         startx = e.getX();
          starty = e.getY();
-       c =  new circle(startx ,starty , Color.BLACK, 0);
+         if(type=="circle"){
+       c =  new circle(startx ,starty , Color.BLACK, 0);}
+         else if(type == "rectangle"){
+             c=new rectangle(startx,starty,Color.black,0,0);
+         }
+         else if(type=="ellipse"){
+             c=new ellipse(startx,starty,Color.black,0,0);
+         }
+         else if (type =="square"){
+             c=new square(startx,starty,Color.black,0);
+         }
+         else if (type=="line"){
+             c=new line(startx,starty,Color.black,startx,starty);
+         }
         panel.addshape(c);
     }
 
     @Override
     public void mouseDragged(MouseEvent e) {
         super.mouseDragged(e);
-         minx = Math.min(e.getX(), startx);
-         miny = Math.min(e.getY(), starty);
-         maxx = Math.max(e.getX(), startx);
-         maxy = Math.max(e.getY(), starty);
+        if (type == "circle") {
 
-        size = Math.min(maxx - minx, maxy - miny);
-        if (minx < startx) {
-            minx = startx - size;
+            minx = Math.min(e.getX(), startx);
+
+            miny = Math.min(e.getY(), starty);
+            maxx = Math.max(e.getX(), startx);
+            maxy = Math.max(e.getY(), starty);
+
+            size = Math.min(maxx - minx, maxy - miny);
+            if (minx < startx) {
+                minx = startx - size;
+            }
+            if (miny < starty) {
+                miny = starty - size;
+            }
+            c.x = minx;
+            c.y = miny;
+            System.out.println(e.getX() + " " + e.getY());
+            ((circle) c).setDiameter(size);
+            panel.update();
         }
-        if (miny < starty) {
-            miny = starty - size;
-        }
-        c.x = minx;
-        c.y = miny;
-        System.out.println(minx + " " + miny);
-        ((circle)c).setDiameter(size);
+        else if (type == "rectangle") {
+            if (e.getX() >= startx) {
+                ((rectangle) c).setLength((e.getX() - startx));
+            } else {
+                c.x = e.getX();
+                ((rectangle) c).setLength(Math.abs(e.getX() - startx));
+            }
+
+            if (e.getY() >= starty) {
+                ((rectangle) c).setWidth((e.getY() - starty));
+            } else {
+                c.y = e.getY();
+                ((rectangle) c).setWidth(Math.abs(e.getY() - starty));
+            }
         panel.update();
-    }
+        }
+        else if (type == "ellipse") {
+            if (e.getX() >= startx) {
+                ((ellipse) c).setA((e.getX() - startx));
+            } else {
+                c.x = e.getX();
+                ((ellipse) c).setA(Math.abs(e.getX() - startx));
+            }
+
+            if (e.getY() >= starty) {
+                ((ellipse) c).setB((e.getY() - starty));
+            } else {
+                c.y = e.getY();
+                ((ellipse) c).setB(Math.abs(e.getY() - starty));
+            }
+            panel.update();
+        }
+       else if (type == "square") {
+            if (e.getX() >= startx) {
+                ((square) c).setLength((e.getX() - startx));
+            } else {
+                c.x = e.getX();
+                ((square) c).setLength(Math.abs(e.getX() - startx));
+            }
+
+
+
+            panel.update();
+        }
+        else if (type == "line") {
+            ((line)c).setEndX(e.getX());
+            ((line)c).setEndY(e.getY());
+            panel.update();
+        }
+
+
+        }
+
 
     @Override
     public void mouseReleased(MouseEvent e) {
@@ -65,8 +134,9 @@ public class mouselisetner extends MouseAdapter implements MouseListener, MouseM
         panel.endlistener();
     }
 
-
-
+    public String getType() {
+        return type;
+    }
     /*
     @Override
     public void mouseClicked(MouseEvent e) {
