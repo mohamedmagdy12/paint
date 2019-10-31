@@ -20,10 +20,11 @@ public class mouselisetner extends MouseAdapter implements MouseListener, MouseM
     int miny;
     int maxx;
     int maxy;
+    Color color;
 
-
-    public mouselisetner(paintpanel panel, String type) {
+    public mouselisetner(paintpanel panel, String type,Color color) {
         super();
+        this.color = color;
         this.panel = panel;
         this.type = type;
     }
@@ -34,18 +35,18 @@ public class mouselisetner extends MouseAdapter implements MouseListener, MouseM
         startx = e.getX();
          starty = e.getY();
          if(type=="circle"){
-       c =  new circle(startx ,starty , Color.BLACK, 0);}
+       c =  new circle(startx ,starty , color, 0);}
          else if(type == "rectangle"){
-             c=new rectangle(startx,starty,Color.black,0,0);
+             c=new rectangle(startx,starty,color,0,0);
          }
          else if(type=="ellipse"){
-             c=new ellipse(startx,starty,Color.black,0,0);
+             c=new ellipse(startx,starty,color,0,0);
          }
          else if (type =="square"){
-             c=new square(startx,starty,Color.black,0);
+             c=new square(startx,starty,color,0);
          }
          else if (type=="line"){
-             c=new line(startx,starty,Color.black,startx,starty);
+             c=new line(startx,starty,color,startx,starty);
          }
         panel.addshape(c);
     }

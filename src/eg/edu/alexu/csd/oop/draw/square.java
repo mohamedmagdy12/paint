@@ -11,8 +11,8 @@ public class square extends dummyshape {
 
     @Override
     public void draw(Graphics g) {
-        g.setColor(Color.black);
-        g.drawRect(this.x,this.y,length,length);
+        g.setColor(this.getColor());
+        g.fill3DRect(this.x,this.y,length,length,true);
     }
 
     public void setLength(int length) {

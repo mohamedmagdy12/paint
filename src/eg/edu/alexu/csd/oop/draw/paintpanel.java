@@ -2,15 +2,19 @@ package eg.edu.alexu.csd.oop.draw;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
 public class paintpanel extends JPanel {
     public  mouselisetner h;
     public  movelisetner g;
+    dummyshape arr[] = new dummyshape[100];
+    int n1 = 0;
     int last = 0;
     dummyshape n;
-    List<dummyshape>  s = new LinkedList<dummyshape>();
+    public List<dummyshape>  s = new LinkedList<dummyshape>();
+
 
     public void addshape(dummyshape c) {
         s.add(c);
@@ -25,6 +29,21 @@ public class paintpanel extends JPanel {
     public void endmovelistener(){
         this.removeMouseListener(g);
         this.removeMouseMotionListener(g);
+    }
+    public void undo() {
+        if (s.size() == 0) return;
+        else {
+            dummyshape h = s.remove(s.size() - 1);
+            arr[n1++] = h;
+            repaint();
+        }
+    }
+
+        public void redo(){
+        if(n1 != 0) {
+            s.add(arr[--n1]);
+            repaint();
+        }
     }
 
     @Override

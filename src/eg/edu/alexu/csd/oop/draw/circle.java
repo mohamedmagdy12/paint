@@ -17,7 +17,7 @@ public class circle extends dummyshape{
 
 
     public void draw(Graphics g){
-        g.setColor(Color.black);
+        g.setColor(this.getColor());
         g.drawOval(this.x,this.y,diameter,diameter);
     }
 

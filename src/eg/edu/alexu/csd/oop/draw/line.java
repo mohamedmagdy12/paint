@@ -16,7 +16,7 @@ public class line extends dummyshape {
 
     @Override
     public void draw(Graphics g) {
-        g.setColor(Color.black);
+        g.setColor(this.getColor());
         g.drawLine(this.x, this.y, endX, endY);
     }
 

@@ -14,10 +14,8 @@ public class ellipse extends dummyshape {
     }
     @Override
     public void draw(Graphics g) {
-        g.setColor(Color.black);
-        Graphics2D x=(Graphics2D) g;
-        x.setColor(Color.black);
-        x.draw(new Ellipse2D.Double(this.x,this.y,a,b));
+        g.setColor(this.getColor());
+        g.fillOval(this.x,this.y,a,b);
     }
 
     public void setA(int a) {

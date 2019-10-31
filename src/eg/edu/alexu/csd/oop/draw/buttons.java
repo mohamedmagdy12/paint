@@ -3,6 +3,9 @@ package eg.edu.alexu.csd.oop.draw;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.swing.*;
 
@@ -14,18 +17,24 @@ public class buttons extends JPanel{
     private JButton btn5;
     private JButton btn6;
     private JButton btn7;
+    private JButton btn8;
+    private JButton btn9;
     private paintpanel panel;
-
+    List<dummyshape> s;
+    JColorChooser jcc;
     public buttons(paintpanel panel) {
+       jcc = new JColorChooser();
         this.btn1 = new JButton("circle");
         this.add(btn1);
         this.panel = panel;
+        s=panel.s;
 
         btn1.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                mouselisetner h = new mouselisetner(panel,"circle");
+                Color c = jcc.showDialog(null , "please select a color", Color.red);
+                mouselisetner h = new mouselisetner(panel,"circle",c);
                 panel.addMouseListener(h);
                 panel.addMouseMotionListener(h);
                 panel.h = h;
@@ -54,7 +63,8 @@ public class buttons extends JPanel{
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                mouselisetner h = new mouselisetner(panel,"rectangle");
+                Color c = jcc.showDialog(null , "please select a color", Color.red);
+                mouselisetner h = new mouselisetner(panel,"rectangle",c);
                 panel.addMouseListener(h);
                 panel.addMouseMotionListener(h);
                 panel.h = h;
@@ -68,7 +78,8 @@ public class buttons extends JPanel{
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                mouselisetner h = new mouselisetner(panel,"ellipse");
+                Color c = jcc.showDialog(null , "please select a color", Color.red);
+                mouselisetner h = new mouselisetner(panel,"ellipse",c);
                 panel.addMouseListener(h);
                 panel.addMouseMotionListener(h);
                 panel.h = h;
@@ -82,7 +93,8 @@ public class buttons extends JPanel{
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                mouselisetner h = new mouselisetner(panel,"square");
+                Color c = jcc.showDialog(null , "please select a color", Color.red);
+                mouselisetner h = new mouselisetner(panel,"square",c);
                 panel.addMouseListener(h);
                 panel.addMouseMotionListener(h);
                 panel.h = h;
@@ -96,7 +108,8 @@ public class buttons extends JPanel{
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                mouselisetner h = new mouselisetner(panel,"line");
+                Color c = jcc.showDialog(null , "please select a color", Color.red);
+                mouselisetner h = new mouselisetner(panel,"line",c);
                 panel.addMouseListener(h);
                 panel.addMouseMotionListener(h);
                 panel.h = h;
@@ -110,14 +123,43 @@ public class buttons extends JPanel{
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                mouselisetner h = new mouselisetner(panel,"triangle");
+                Color c = jcc.showDialog(null , "please select a color", Color.red);
+                mouselisetner h = new mouselisetner(panel,"triangle",c);
                 panel.addMouseListener(h);
                 panel.addMouseMotionListener(h);
                 panel.h = h;
             }
 
         });
+        this.btn8 = new JButton("undo");
+        this.add(btn8);
+        this.panel = panel;
+        btn8.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               panel.undo();
+            }
+
+        });
+
+        this.btn9 = new JButton("redo");
+        this.add(btn9);
+        this.panel = panel;
+        btn9.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                panel.redo();
+            }
+
+        });
     }
+
+
+
+
+
 
 
 }

@@ -13,8 +13,8 @@ public class rectangle extends dummyshape {
     }
     @Override
     public void draw(Graphics g) {
-        g.setColor(Color.black);
-        g.drawRect(this.x,this.y,length,width);
+        g.setColor(this.getColor());
+        g.fill3DRect(this.x,this.y,length,width,true);
     }
 
     public void setWidth(int width) {
