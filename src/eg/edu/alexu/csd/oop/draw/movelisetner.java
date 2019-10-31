@@ -8,6 +8,7 @@ import java.awt.event.MouseMotionListener;
 public class movelisetner extends MouseAdapter implements MouseListener, MouseMotionListener {
     boolean dragged = false;
       paintpanel panel;
+      dummyshape n;
     public movelisetner(paintpanel panel) {
         this.panel = panel;
     }
@@ -17,7 +18,13 @@ public class movelisetner extends MouseAdapter implements MouseListener, MouseMo
         super.mousePressed(e);
         int x = e.getX();
         int y = e.getY();
-        dragged = ((circle)panel.n).in(x,y);
+        for(dummyshape c : panel.s) {
+            dragged = c.in(x, y);
+            if(dragged){
+                n = c;
+                break;
+            }
+        }
     }
 
     @Override
@@ -32,10 +39,35 @@ public class movelisetner extends MouseAdapter implements MouseListener, MouseMo
         if(dragged){
             int x = e.getX();
             int y = e.getY();
-
-            panel.n.x = x - ((circle)panel.n).diameter/2;
-            panel.n.y = y - ((circle)panel.n).diameter/2;
-            panel.update();
+           if(n.type == "circle") {
+               n.x = x - ((circle) n).diameter / 2;
+               n.y = y - ((circle) n).diameter / 2;
+               panel.update();
+           }
+           if(n.type == "square"){
+               n.x = x-((square) n).getLength()/2;
+               n.y = y-((square) n).getLength()/2;
+               panel.update();
+           }
+            if(n.type == "rectangle"){
+                n.x = x-((rectangle) n).getLength()/2;
+                n.y = y-((rectangle) n).getWidth()/2;
+                panel.update();
+            }
+            if(n.type == "ellipse"){
+                n.x = x-((ellipse) n).getA()/2;
+                n.y = y-((ellipse) n).getB()/2;
+                panel.update();
+            }
+            if(n.type == "triangle"){
+                int l = ((triangle) n).getLength();
+                int w = ((triangle) n).getWidth();
+                n.x = x-l/2;
+                n.y = y-w/2;
+                ((triangle) n).endx = n.x + l;
+                ((triangle) n).endy = n.y + w;
+                panel.update();
+            }
         }
     }
 }

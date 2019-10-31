@@ -1,5 +1,4 @@
 package eg.edu.alexu.csd.oop.draw;
-
 import javax.swing.*;
 import java.awt.*;
 import java.util.Iterator;
@@ -38,7 +37,6 @@ public class paintpanel extends JPanel {
             repaint();
         }
     }
-
         public void redo(){
         if(n1 != 0) {
             s.add(arr[--n1]);
@@ -51,18 +49,7 @@ public class paintpanel extends JPanel {
         super.paint(graphics);
         for(dummyshape c : s){
             c.draw(graphics);
-            if(c.type=="circle"){
 
-            n =(circle)c;
-            }
-            else if (c.type=="rectangle"){
-
-                n=(rectangle)c;
-            }
-            else if (c.type=="ellipse"){
-
-                n=(ellipse)c;
-            }
         }
     }
 }

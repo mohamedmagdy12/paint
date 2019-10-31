@@ -20,7 +20,7 @@ public class circle extends dummyshape{
         g.setColor(this.getColor());
         g.drawOval(this.x,this.y,diameter,diameter);
     }
-
+    @Override
    public boolean in(int a , int b){
         double dist = ((double)this.x+(double)diameter/2.0 - a)*((double)this.x+ (double)diameter/2 - a) + ((double)this.y+(double)diameter/2 -b)*((double)this.y+(double)diameter/2 -b);
         if(dist <= (diameter*diameter)/4)return true;

@@ -25,4 +25,21 @@ public class ellipse extends dummyshape {
     public void setB(int b) {
         this.b = b;
     }
+
+    public int getA() {
+        return a;
+    }
+
+    public int getB() {
+        return b;
+    }
+    @Override
+    public boolean  in(int A , int B){
+        double h=this.x+a/2;
+        double k=this.y+b/2;
+        if((Math.pow(A-h,2)/Math.pow(a/2,2)+Math.pow(B-k,2)/Math.pow(b/2,2))<=1){
+            return true;
+        }
+        else return false;
+    }
 }

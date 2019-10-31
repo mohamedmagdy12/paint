@@ -15,7 +15,16 @@ public class square extends dummyshape {
         g.fill3DRect(this.x,this.y,length,length,true);
     }
 
+    public int getLength() {
+        return length;
+    }
+
     public void setLength(int length) {
         this.length = length;
+    }
+    @Override
+    public boolean in(int a,int b){
+        if(a-this.x <= this.length && a-this.x >=0 && b-this.y <= this.length && b-this.y >=0)return true;
+        else return false;
     }
 }

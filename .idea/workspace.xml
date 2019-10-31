@@ -2,38 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="abc0c1fc-9b89-4176-939e-0ec366e2bea8" name="Default Changelist" comment="test">
+      <change afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/triangle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/55_56_paint/eg/edu/alexu/csd/oop/draw/DrawingEngine.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/55_56_paint/eg/edu/alexu/csd/oop/draw/Shape.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/55_56_paint/eg/edu/alexu/csd/oop/draw/buttons$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/55_56_paint/eg/edu/alexu/csd/oop/draw/buttons$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/55_56_paint/eg/edu/alexu/csd/oop/draw/buttons$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/55_56_paint/eg/edu/alexu/csd/oop/draw/buttons$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/55_56_paint/eg/edu/alexu/csd/oop/draw/buttons.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/55_56_paint/eg/edu/alexu/csd/oop/draw/circle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/55_56_paint/eg/edu/alexu/csd/oop/draw/dummyshape.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/55_56_paint/eg/edu/alexu/csd/oop/draw/ellipse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/55_56_paint/eg/edu/alexu/csd/oop/draw/mouselisetner.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/55_56_paint/eg/edu/alexu/csd/oop/draw/mousemotion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/55_56_paint/eg/edu/alexu/csd/oop/draw/movelisetner.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/55_56_paint/eg/edu/alexu/csd/oop/draw/paintframe.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/55_56_paint/eg/edu/alexu/csd/oop/draw/paintpanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/55_56_paint/eg/edu/alexu/csd/oop/draw/rectangle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/55_56_paint/eg/edu/alexu/csd/oop/draw/square.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/55_56_paint/eg/edu/alexu/csd/oop/test/draw/IntegrationTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/55_56_paint/eg/edu/alexu/csd/oop/test/draw/SanityTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/55_56_paint/eg/edu/alexu/csd/oop/test/draw/SmokeTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/buttons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/buttons.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/circle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/dummyshape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/dummyshape.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/ellipse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/ellipse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/line.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/line.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/mouselisetner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/mouselisetner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/movelisetner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/movelisetner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/paintpanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/paintpanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/rectangle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/square.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/test/draw/IntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/test/draw/IntegrationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/test/draw/SanityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/test/draw/SanityTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/test/draw/SmokeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/test/draw/SmokeTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

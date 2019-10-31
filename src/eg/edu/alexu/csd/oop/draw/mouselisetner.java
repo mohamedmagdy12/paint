@@ -48,6 +48,9 @@ public class mouselisetner extends MouseAdapter implements MouseListener, MouseM
          else if (type=="line"){
              c=new line(startx,starty,color,startx,starty);
          }
+         else if (type=="triangle"){
+             c=new triangle(startx,starty,color);
+         }
         panel.addshape(c);
     }
 
@@ -122,6 +125,22 @@ public class mouselisetner extends MouseAdapter implements MouseListener, MouseM
         else if (type == "line") {
             ((line)c).setEndX(e.getX());
             ((line)c).setEndY(e.getY());
+            panel.update();
+        }
+        else if (type == "triangle") {
+            if (e.getX() >= startx) {
+                ((triangle) c).endx = e.getX();
+            } else {
+                c.x = e.getX();
+                ((triangle) c).endx = startx;
+            }
+
+            if (e.getY() >= starty) {
+                ((triangle) c).endy = e.getY();
+            } else {
+                c.y = e.getY();
+                ((triangle) c).endy = starty;
+            }
             panel.update();
         }
 

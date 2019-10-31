@@ -63,6 +63,9 @@ public class dummyshape implements Shape {
     public void draw(Graphics g) {
 
     }
+    public boolean in(int a,int b){
+        return true;
+    }
 
     @Override
     public Object clone() throws CloneNotSupportedException {
