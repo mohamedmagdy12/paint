@@ -18,7 +18,7 @@ public class buttons extends JPanel{
     private JButton btn6;
     private JButton btn7;
     private JButton btn8;
-    private JButton btn9;
+    private JButton btn9,btn10;
     private paintpanel panel;
     List<dummyshape> s;
     JColorChooser jcc;
@@ -128,6 +128,21 @@ public class buttons extends JPanel{
                 panel.addMouseListener(h);
                 panel.addMouseMotionListener(h);
                 panel.h = h;
+            }
+
+        });
+
+        this.btn10 = new JButton("resize");
+        this.add(btn10);
+        this.panel = panel;
+        btn10.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                resize h = new resize(panel);
+                panel.addMouseListener(h);
+                panel.addMouseMotionListener(h);
+                panel.x= h;
             }
 
         });

@@ -74,7 +74,7 @@ public class mouselisetner extends MouseAdapter implements MouseListener, MouseM
             }
             c.x = minx;
             c.y = miny;
-            System.out.println(e.getX() + " " + e.getY());
+
             ((circle) c).setDiameter(size);
             panel.update();
         }

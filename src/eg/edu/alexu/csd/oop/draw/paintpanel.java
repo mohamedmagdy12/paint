@@ -8,6 +8,7 @@ import java.util.List;
 public class paintpanel extends JPanel {
     public  mouselisetner h;
     public  movelisetner g;
+    public resize x;
     dummyshape arr[] = new dummyshape[100];
     int n1 = 0;
     int last = 0;
@@ -28,6 +29,10 @@ public class paintpanel extends JPanel {
     public void endmovelistener(){
         this.removeMouseListener(g);
         this.removeMouseMotionListener(g);
+    }
+    public void endresizelistener(){
+        this.removeMouseListener(x);
+        this.removeMouseMotionListener(x);
     }
     public void undo() {
         if (s.size() == 0) return;
