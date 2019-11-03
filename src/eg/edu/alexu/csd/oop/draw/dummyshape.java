@@ -6,8 +6,10 @@ import java.util.Map;
 public class dummyshape implements Shape {
     int x;
     int y;
-    private Color color;
-     String type;
+    int current;
+    boolean first;
+    Color color;
+    String type;
 
     public dummyshape(){};
     public dummyshape(int x,int y,Color color,String type) {

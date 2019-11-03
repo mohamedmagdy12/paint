@@ -18,7 +18,7 @@ public class buttons extends JPanel{
     private JButton btn6;
     private JButton btn7;
     private JButton btn8;
-    private JButton btn9,btn10;
+    private JButton btn9,btn10,btn11;
     private paintpanel panel;
     List<dummyshape> s;
     JColorChooser jcc;
@@ -166,6 +166,22 @@ public class buttons extends JPanel{
             @Override
             public void actionPerformed(ActionEvent e) {
                 panel.redo();
+            }
+
+        });
+        this.btn11 = new JButton("repaint");
+        this.add(btn11);
+        this.panel = panel;
+        btn11.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Color c = jcc.showDialog(null , "please select a color", Color.red);
+                repaint x=new repaint(panel,c);
+                panel.addMouseListener(x);
+                panel.addMouseMotionListener(x);
+                panel.t= x;
+                panel.update();
             }
 
         });
