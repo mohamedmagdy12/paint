@@ -18,7 +18,7 @@ public class buttons extends JPanel{
     private JButton btn6;
     private JButton btn7;
     private JButton btn8;
-    private JButton btn9,btn10,btn11;
+    private JButton btn9,btn10,btn11,btn12,btn13;
     private paintpanel panel;
     List<dummyshape> s;
     JColorChooser jcc;
@@ -169,10 +169,41 @@ public class buttons extends JPanel{
             }
 
         });
-        this.btn11 = new JButton("repaint");
+
+        this.btn11 = new JButton("save");
         this.add(btn11);
         this.panel = panel;
         btn11.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JAXBExample j = new JAXBExample(panel);
+                j.save();
+
+            }
+
+        });
+
+        this.btn12 = new JButton("load");
+        this.add(btn12);
+        this.panel = panel;
+        btn12.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JAXBExample j = new JAXBExample(panel);
+
+                j.load();
+
+                panel.repaint();
+            }
+
+        });
+
+        this.btn13 = new JButton("repaint");
+        this.add(btn13);
+        this.panel = panel;
+        btn13.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {

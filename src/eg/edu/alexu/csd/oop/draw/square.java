@@ -4,8 +4,17 @@ import java.awt.*;
 
 public class square extends dummyshape {
     private int length;
-    public square(int x, int y, Color color,int length) {
+
+    public square() {
+    }
+
+    public square(int x, int y, Color color, int length) {
         super(x, y, color,"square");
+        this.length = length;
+    }
+
+    public square(int x, int y, int current, boolean first, Color color, String type, int length) {
+        super(x, y, current, first, color, type);
         this.length = length;
     }
 

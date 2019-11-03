@@ -87,7 +87,9 @@ public class paintpanel extends JPanel {
         }
         repaint();
     }
-
+    public void load(){
+        repaint();
+    }
     @Override
     public void paint(Graphics graphics) {
         super.paint(graphics);

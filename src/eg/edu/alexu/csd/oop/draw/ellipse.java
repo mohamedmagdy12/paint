@@ -1,11 +1,30 @@
 package eg.edu.alexu.csd.oop.draw;
-
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.awt.*;
+import javax.crypto.Cipher;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.util.Map;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 
 public class ellipse extends dummyshape {
     private int a;
     private int b;
+
+    public ellipse() {
+    }
+
+    public ellipse(int x, int y, int current, boolean first, Color color, String type, int a, int b) {
+        super(x, y, current, first, color, type);
+        this.a = a;
+        this.b = b;
+    }
+
     public  ellipse(int x, int y, Color color, int a, int b){
         super(x,y,color,"ellipse");
         this.a=a;

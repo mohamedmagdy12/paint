@@ -1,11 +1,34 @@
 package eg.edu.alexu.csd.oop.draw;
 
 import java.awt.*;
+import javax.xml.bind.annotation.XmlAttribute;
+import java.lang.Math;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.awt.*;
+import javax.crypto.Cipher;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.util.Map;
+import java.awt.*;
 
 public class rectangle extends dummyshape {
     private int length;
     private int width;
-    public rectangle(int x, int y, Color color,int length,int width){
+
+    public rectangle() {
+    }
+
+    public rectangle(int x, int y, int current, boolean first, Color color, String type, int length, int width) {
+        super(x, y, current, first, color, type);
+        this.length = length;
+        this.width = width;
+    }
+
+    public rectangle(int x, int y, Color color, int length, int width){
         super(x,y,color,"rectangle");
         this.length=length;
         this.width=width;

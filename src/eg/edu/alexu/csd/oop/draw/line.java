@@ -6,6 +6,24 @@ import java.awt.*;
 public class line extends dummyshape {
     int endX, endY;
 
+    public int getEndX() {
+        return endX;
+    }
+
+    public int getEndY() {
+        return endY;
+    }
+
+    public line() {
+
+    }
+
+    public line(int x, int y, int current, boolean first, Color color, String type, int endX, int endY) {
+        super(x, y, current, first, color, type);
+        this.endX = endX;
+        this.endY = endY;
+    }
+
     public line(int x, int y, Color color, int endX, int endY) {
         super(x, y, color, "line");
         this.endX = endX;
