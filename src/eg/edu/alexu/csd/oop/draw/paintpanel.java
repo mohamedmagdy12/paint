@@ -39,6 +39,9 @@ public class paintpanel extends JPanel {
         this.removeMouseMotionListener(h);
     }
     public void endmovelistener(){
+        redo[n1] = g.g;
+        g.g.current = g.n.current;
+        g.g.first = false;
         this.removeMouseListener(g);
         this.removeMouseMotionListener(g);
     }

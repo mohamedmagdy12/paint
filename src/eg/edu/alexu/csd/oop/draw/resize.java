@@ -38,6 +38,8 @@ public class resize extends MouseAdapter implements MouseListener, MouseMotionLi
                 }
                 else if(n.type == "triangle"){
                     triangle g = new triangle(n.x,n.y,n.color);
+                    g.setEndx(((triangle)n).getEndx());
+                    g.setEndy(((triangle)n).getEndy());
                     g.first = false;
                     g.current = n.current;
                     panel.history[++panel.n1] = g;

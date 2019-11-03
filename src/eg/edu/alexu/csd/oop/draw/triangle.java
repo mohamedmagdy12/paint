@@ -65,4 +65,20 @@ public boolean in(int a , int b){
     {
         return (float)Math.abs((x1*(y2-y3) + x2*(y3-y1)+ x3*(y1-y2))/2.0);
     }
+
+    public int getEndx() {
+        return endx;
+    }
+
+    public int getEndy() {
+        return endy;
+    }
+
+    public void setEndx(int endx) {
+        this.endx = endx;
+    }
+
+    public void setEndy(int endy) {
+        this.endy = endy;
+    }
 }

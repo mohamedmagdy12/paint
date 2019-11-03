@@ -27,44 +27,70 @@ public class repaint extends MouseAdapter implements MouseListener, MouseMotionL
             if(dragged){
                 n = c;
                 if(n.type == "circle") {
-                    n.color=color;
                     circle g = new circle(n.x, n.y, n.color, ((circle) n).diameter);
                     g.first = false;
                     g.current = n.current;
                     panel.history[++panel.n1] = g;
+                    g = new circle(n.x, n.y, n.color, ((circle) n).diameter);
+                    g.first = false;
+                    g.current = n.current;
+                    n.color=color;
+                    g.color = color;
                     G=((circle)g);
                 }
                 else if(n.type == "rectangle"){
-                    n.color=color;
+
                     rectangle g = new rectangle(n.x,n.y,n.color,((rectangle)n).getLength(),((rectangle)n).getWidth());
                     g.first = false;
                     g.current = n.current;
                     panel.history[++panel.n1] = g;
+                     g = new rectangle(n.x,n.y,n.color,((rectangle)n).getLength(),((rectangle)n).getWidth());
+                    g.first = false;
+                    g.current = n.current;
+                    n.color=color;
+                    g.color=color;
                     G=((rectangle)g);
                 }
                 else if(n.type == "triangle"){
-                    n.color=color;
+
                     triangle g = new triangle(n.x,n.y,n.color);
+                    g.setEndx(((triangle)n).getEndx());
+                    g.setEndy(((triangle)n).getEndy());
                     g.first = false;
                     g.current = n.current;
                     panel.history[++panel.n1] = g;
+                     g = new triangle(n.x,n.y,n.color);
+                    g.setEndx(((triangle)n).getEndx());
+                    g.setEndy(((triangle)n).getEndy());
+                    g.first = false;
+                    g.current = n.current;
+                    n.color=color;
+                    g.color=color;
                     G=((triangle)g);
                 }
                 else if(n.type == "square"){
-                    n.color=color;
+
                     square g = new square(n.x,n.y,n.color,((square)n).getLength());
                     g.first = false;
                     g.current = n.current;
                     panel.history[++panel.n1] = g;
+                     g = new square(n.x,n.y,n.color,((square)n).getLength());
+                    g.first = false;
+                    g.current = n.current;
+                    n.color=color;
+                    g.color=color;
                     G=((square)g);
                 }
                 else if(n.type == "ellipse"){
-                    System.out.println("gerree"+ n.current);
-                    n.color=color;
                     ellipse g = new ellipse(n.x,n.y,n.color,((ellipse)n).getA(),((ellipse)n).getB());
                     g.first = false;
                     g.current = n.current;
                     panel.history[++panel.n1] = g;
+                     g = new ellipse(n.x,n.y,n.color,((ellipse)n).getA(),((ellipse)n).getB());
+                    g.first = false;
+                    g.current = n.current;
+                    n.color=color;
+                    g.color=color;
                     G=((ellipse)g);
                 }
                 panel.update();
