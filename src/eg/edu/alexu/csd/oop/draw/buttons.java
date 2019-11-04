@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.swing.*;
 
-public class buttons extends JPanel{
+public class buttons extends JPanel {
     private JButton btn1;
     private JButton btn2;
     private JButton btn3;
@@ -18,23 +18,24 @@ public class buttons extends JPanel{
     private JButton btn6;
     private JButton btn7;
     private JButton btn8;
-    private JButton btn9,btn10,btn11,btn12,btn13;
+    private JButton btn9, btn10, btn11, btn12, btn13;
     private paintpanel panel;
-    List<dummyshape> s;
+    List<Shape> s;
     JColorChooser jcc;
+
     public buttons(paintpanel panel) {
-       jcc = new JColorChooser();
+        jcc = new JColorChooser();
         this.btn1 = new JButton("circle");
         this.add(btn1);
         this.panel = panel;
-        s=panel.s;
+        s = panel.s;
 
         btn1.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                Color c = jcc.showDialog(null , "please select a color", Color.red);
-                mouselisetner h = new mouselisetner(panel,"circle",c);
+                Color c = jcc.showDialog(null, "please select a color", Color.red);
+                mouselisetner h = new mouselisetner(panel, "circle", c);
                 panel.addMouseListener(h);
                 panel.addMouseMotionListener(h);
                 panel.h = h;
@@ -56,6 +57,8 @@ public class buttons extends JPanel{
             }
 
         });
+
+
         this.btn3 = new JButton("rectangle");
         this.add(btn3);
         this.panel = panel;
@@ -71,6 +74,7 @@ public class buttons extends JPanel{
             }
 
         });
+
         this.btn4 = new JButton("ellipse");
         this.add(btn4);
         this.panel = panel;
@@ -86,6 +90,7 @@ public class buttons extends JPanel{
             }
 
         });
+
         this.btn5 = new JButton("square");
         this.add(btn5);
         this.panel = panel;
@@ -101,6 +106,7 @@ public class buttons extends JPanel{
             }
 
         });
+
         this.btn6 = new JButton("line");
         this.add(btn6);
         this.panel = panel;
@@ -116,6 +122,7 @@ public class buttons extends JPanel{
             }
 
         });
+
         this.btn7 = new JButton("triangle");
         this.add(btn7);
         this.panel = panel;
@@ -131,7 +138,7 @@ public class buttons extends JPanel{
             }
 
         });
-
+/*
         this.btn10 = new JButton("resize");
         this.add(btn10);
         this.panel = panel;
@@ -146,6 +153,7 @@ public class buttons extends JPanel{
             }
 
         });
+*/
         this.btn8 = new JButton("undo");
         this.add(btn8);
         this.panel = panel;
@@ -177,12 +185,14 @@ public class buttons extends JPanel{
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                JAXBExample j = new JAXBExample(panel);
-                j.save();
+               //panel.save("./person.xml");
+                panel.saveas();
+               panel.repaint();
 
             }
 
         });
+
 
         this.btn12 = new JButton("load");
         this.add(btn12);
@@ -191,15 +201,13 @@ public class buttons extends JPanel{
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                JAXBExample j = new JAXBExample(panel);
-
-                j.load();
-
+               // panel.load("./person.xml");
+                panel.loadfrom();
                 panel.repaint();
             }
 
         });
-
+/*
         this.btn13 = new JButton("repaint");
         this.add(btn13);
         this.panel = panel;
@@ -224,4 +232,8 @@ public class buttons extends JPanel{
 
 
 
+}
+
+ */
+    }
 }

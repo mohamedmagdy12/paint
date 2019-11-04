@@ -6,6 +6,7 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
 public class resize extends MouseAdapter implements MouseListener, MouseMotionListener {
+    /*
     boolean dragged = false;
     paintpanel panel;
     dummyshape n;
@@ -23,20 +24,22 @@ public class resize extends MouseAdapter implements MouseListener, MouseMotionLi
             dragged = c.in(x, y);
             if(dragged){
                 n = c;
-                if(n.type == "circle") {
+
+                if(n.type.equals("circle")) {
                     circle g = new circle(n.x, n.y, n.color, ((circle) n).diameter);
                     g.first = false;
                     g.current = n.current;
                     panel.history[++panel.n1] = g;
 
+
                 }
-                else if(n.type == "rectangle"){
+                else if(n.type.equals("rectangle")){
                     rectangle g = new rectangle(n.x,n.y,n.color,((rectangle)n).getLength(),((rectangle)n).getWidth());
                     g.first = false;
                     g.current = n.current;
                     panel.history[++panel.n1] = g;
                 }
-                else if(n.type == "triangle"){
+                else if(n.type.equals("triangle")){
                     triangle g = new triangle(n.x,n.y,n.color);
                     g.setEndx(((triangle)n).getEndx());
                     g.setEndy(((triangle)n).getEndy());
@@ -44,13 +47,13 @@ public class resize extends MouseAdapter implements MouseListener, MouseMotionLi
                     g.current = n.current;
                     panel.history[++panel.n1] = g;
                 }
-                else if(n.type == "square"){
+                else if(n.type.equals("square")){
                     square g = new square(n.x,n.y,n.color,((square)n).getLength());
                     g.first = false;
                     g.current = n.current;
                     panel.history[++panel.n1] = g;
                 }
-                else if(n.type == "ellipse"){
+                else if(n.type.equals("ellipse")){
                     ellipse g = new ellipse(n.x,n.y,n.color,((ellipse)n).getA(),((ellipse)n).getB());
                     g.first = false;
                     g.current = n.current;
@@ -75,20 +78,20 @@ public class resize extends MouseAdapter implements MouseListener, MouseMotionLi
         if(dragged){
             int x = e.getX();
             int y = e.getY();
-            if(n.type == "circle") {
+            if(n.type.equals("circle")) {
                 g=(circle)g;
                 g = new circle(n.x, n.y, n.color, ((circle) n).diameter);
                 ((circle)n).diameter = x - ((circle) n).diameter / 2;
                 ((circle)g).diameter = x - ((circle) g).diameter / 2;
                 panel.update();
             }
-            if(n.type == "square"){
+            if(n.type.equals("square")){
                 g=new square(n.x,n.y,n.color,((square)n).getLength());
                 ((square) n).setLength(Math.max(Math.abs(n.x-x),Math.abs(n.y-y)));
                 ((square) g).setLength(Math.max(Math.abs(n.x-x),Math.abs(n.y-y)));
                 panel.update();
             }
-            if(n.type == "rectangle"){
+            if(n.type.equals("rectangle")){
                 g = (rectangle)g;
                 g = new rectangle(n.x,n.y,n.color,((rectangle)n).getLength(),((rectangle)n).getWidth());
                 ((rectangle) n).setLength(Math.abs(e.getX() - n.x));
@@ -97,7 +100,7 @@ public class resize extends MouseAdapter implements MouseListener, MouseMotionLi
                 ((rectangle) g).setWidth(Math.abs(e.getY() - g.y));
                 panel.update();
             }
-            if(n.type == "ellipse"){
+            if(n.type.equals("ellipse")){
                 g=new ellipse(n.x,n.y,n.color,((ellipse)n).getA(),((ellipse)n).getB());
                 ((ellipse) n).setA(Math.abs(e.getX() - n.x));
                 ((ellipse) n).setB(Math.abs(e.getY() - n.y));
@@ -105,7 +108,7 @@ public class resize extends MouseAdapter implements MouseListener, MouseMotionLi
                 ((ellipse) g).setB(Math.abs(e.getY() - n.y));
                 panel.update();
             }
-            if(n.type == "triangle"){
+            if(n.type.equals("triangle")){
                 if(x>=n.x&&y>=n.y){
                     g=new triangle(n.x,n.y,n.color);
 
@@ -118,4 +121,6 @@ public class resize extends MouseAdapter implements MouseListener, MouseMotionLi
             }
         }
     }
+
+     */
 }

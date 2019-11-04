@@ -1,12 +1,8 @@
 package eg.edu.alexu.csd.oop.test.draw;
-/*
-import static org.junit.Assert.*;
 
+import static org.junit.Assert.*;
 import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Point;
 import java.util.List;
-import java.util.Map;
 
 import org.junit.Test;
 
@@ -22,14 +18,12 @@ public class SanityTest {
     public static Class<?> getSpecifications(){
         return DrawingEngine.class;
     }
-    
+
     @org.junit.Test
     public void testAddAndRemove() {
         DrawingEngine instance = (DrawingEngine)eg.edu.alexu.csd.oop.test.TestRunner.getImplementationInstanceForInterface(DrawingEngine.class);
-        
         Shape shape = new DummyShape();
         instance.addShape(shape);
-        
         assertEquals("Wrong number of returned shapes", 1, instance.getShapes().length);
         
         try {
@@ -112,7 +106,7 @@ public class SanityTest {
         } catch (Throwable e) {
             TestRunner.fail("Engine failed to undo action", e);
         }
-        
+        System.out.println(instance.getShapes().length);
         assertEquals("Wrong number of returned shapes after undo", 2, instance.getShapes().length);
     }
     
@@ -478,4 +472,3 @@ public class SanityTest {
     
 }
 
- */

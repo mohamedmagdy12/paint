@@ -11,8 +11,8 @@ import java.awt.event.MouseEvent;
 
 public class mouselisetner extends MouseAdapter implements MouseListener, MouseMotionListener {
     int size =0;
-    public dummyshape c;
-    public dummyshape h;
+    public Shape c;
+    public Shape h;
     private String type;
     private paintpanel panel;
     int startx;
@@ -35,39 +35,36 @@ public class mouselisetner extends MouseAdapter implements MouseListener, MouseM
         super.mousePressed(e);
         startx = e.getX();
         starty = e.getY();
-        if(type=="circle"){
-            c =  new circle(startx ,starty , color, 0);
-            h =  new circle(startx ,starty , color, 0);
+        if(type.equals("circle")){
+           c= new circle(startx,starty,color,color,0);
         }
-        else if(type == "rectangle"){
+        else if(type.equals("rectangle")){
             c=new rectangle(startx,starty,color,0,0);
-            h =new rectangle(startx,starty,color,0,0);
         }
-        else if(type=="ellipse"){
+
+        else if(type.equals("ellipse")){
             c=new ellipse(startx,starty,color,0,0);
-            h=new ellipse(startx,starty,color,0,0);
+        }
 
+        else if (type.equals("square")){
+            c=new square(startx,starty,color,color,0);
         }
-        else if (type =="square"){
-            c=new square(startx,starty,color,0);
-            h=new square(startx,starty,color,0);
-        }
-        else if (type=="line"){
+
+        else if (type.equals("line")){
             c=new line(startx,starty,color,startx,starty);
-            h=new line(startx,starty,color,startx,starty);
+        }
 
+        else if (type.equals("triangle")){
+            c=new triangle(startx,starty,color,color,startx,starty);
         }
-        else if (type=="triangle"){
-            c=new triangle(startx,starty,color);
-            h=new triangle(startx,starty,color);
-        }
-        panel.addshape(c);
+
+        panel.addshapee(c);
     }
 
     @Override
     public void mouseDragged(MouseEvent e) {
         super.mouseDragged(e);
-        if (type == "circle") {
+        if (type.equals("circle")) {
 
             minx = Math.min(e.getX(), startx);
 
@@ -82,101 +79,70 @@ public class mouselisetner extends MouseAdapter implements MouseListener, MouseM
             if (miny < starty) {
                 miny = starty - size;
             }
-            c.x = minx;
-            c.y = miny;
-            h.x = minx;
-            h.y = miny;
-
+            c.setPosition(new Point(minx, miny));
             ((circle) c).setDiameter(size);
-            ((circle) h).setDiameter(size);
             panel.update();
-        }
-        else if (type == "rectangle") {
+        } else if (type.equals("rectangle")) {
             if (e.getX() >= startx) {
                 ((rectangle) c).setLength((e.getX() - startx));
-                ((rectangle) h).setLength((e.getX() - startx));
+
             } else {
-                c.x = e.getX();
+                c.setPosition(new Point(e.getX(), c.getPosition().y));
                 ((rectangle) c).setLength(Math.abs(e.getX() - startx));
-                h.x = e.getX();
-                ((rectangle) h).setLength(Math.abs(e.getX() - startx));
             }
 
             if (e.getY() >= starty) {
                 ((rectangle) c).setWidth((e.getY() - starty));
-                ((rectangle) h).setWidth((e.getY() - starty));
+
             } else {
-                c.y = e.getY();
+                c.setPosition(new Point(c.getPosition().x, e.getY()));
                 ((rectangle) c).setWidth(Math.abs(e.getY() - starty));
-                h.y = e.getY();
-                ((rectangle) h).setWidth(Math.abs(e.getY() - starty));
             }
             panel.update();
-        }
-        else if (type == "ellipse") {
+        } else if (type.equals("ellipse")) {
             if (e.getX() >= startx) {
                 ((ellipse) c).setA((e.getX() - startx));
-                ((ellipse) h).setA((e.getX() - startx));
+
             } else {
-                c.x = e.getX();
+                c.setPosition(new Point(e.getX(), c.getPosition().y));
                 ((ellipse) c).setA(Math.abs(e.getX() - startx));
-                h.x = e.getX();
-                ((ellipse) h).setA(Math.abs(e.getX() - startx));
             }
 
             if (e.getY() >= starty) {
                 ((ellipse) c).setB((e.getY() - starty));
-                ((ellipse) h).setB((e.getY() - starty));
             } else {
-                c.y = e.getY();
+                c.setPosition(new Point(c.getPosition().x, e.getY()));
                 ((ellipse) c).setB(Math.abs(e.getY() - starty));
-                h.y = e.getY();
-                ((ellipse) h).setB(Math.abs(e.getY() - starty));
             }
             panel.update();
-        }
-        else if (type == "square") {
+        } else if (type.equals("square")) {
             if (e.getX() >= startx) {
                 ((square) c).setLength((e.getX() - startx));
-                ((square) h).setLength((e.getX() - startx));
             } else {
-                c.x = e.getX();
+                c.setPosition(new Point(e.getX(), c.getPosition().y));
                 ((square) c).setLength(Math.abs(e.getX() - startx));
-
-                h.x = e.getX();
-                ((square) h).setLength(Math.abs(e.getX() - startx));
             }
 
 
-
             panel.update();
-        }
-        else if (type == "line") {
-            ((line)c).setEndX(e.getX());
-            ((line)c).setEndY(e.getY());
-            ((line)h).setEndX(e.getX());
-            ((line)h).setEndY(e.getY());
+        } else if (type.equals("line")) {
+            ((line) c).setEndX(e.getX());
+            ((line) c).setEndY(e.getY());
             panel.update();
-        }
-        else if (type == "triangle") {
+        } else if (type.equals("triangle")) {
             if (e.getX() >= startx) {
                 ((triangle) c).endx = e.getX();
-                ((triangle) h).endx = e.getX();
+
             } else {
-                c.x = e.getX();
-                h.x = e.getX();
+                c.setPosition(new Point(e.getX(), c.getPosition().y));
                 ((triangle) c).endx = startx;
-                ((triangle) h).endx = startx;
             }
 
             if (e.getY() >= starty) {
                 ((triangle) c).endy = e.getY();
-                ((triangle) h).endy = e.getY();
             } else {
-                c.y = e.getY();
+                c.setPosition(new Point(c.getPosition().y, e.getY()));
                 ((triangle) c).endy = starty;
-                h.y = e.getY();
-                ((triangle) h).endy = starty;
             }
             panel.update();
         }

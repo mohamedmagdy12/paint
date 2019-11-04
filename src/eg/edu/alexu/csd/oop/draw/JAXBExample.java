@@ -1,5 +1,6 @@
 package eg.edu.alexu.csd.oop.draw;
 
+import eg.edu.alexu.csd.oop.test.DummyShape;
 import sun.awt.image.ImageWatched;
 
 import java.awt.*;
@@ -15,30 +16,21 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class JAXBExample {
+
  paintpanel p;
+ String path = "./person.xml";
 File n;
- public JAXBExample(paintpanel panel){
+ public JAXBExample(paintpanel panel,String Path){
      this.p = panel;
-     n = new File("./person.xml");
+     n = new File(path);
+     this.path = path;
  }
     public void save() {
         try {
             FileOutputStream fos = new FileOutputStream(n);
             XMLEncoder encoder = new XMLEncoder(fos);
-            for(dummyshape s : p.s) {
-                if(s.type == "circle")
-                    encoder.writeObject(new circle(s.x,s.y,s.current,s.first,s.color,s.type,((circle)s).diameter));
-                else if(s.type == "square")
-                    encoder.writeObject(new square(s.x,s.y,s.current,s.first,s.color,s.type,((square)s).getLength()));
-                else if(s.type == "line")
-                    encoder.writeObject(new line(s.x,s.y,s.current,s.first,s.color,s.type,((line)s).endX,((line)s).endY));
-                else if(s.type == "ellipse")
-                    encoder.writeObject(new ellipse(s.x,s.y,s.current,s.first,s.color,s.type,((ellipse)s).getA(),((ellipse)s).getB()));
-                else if(s.type == "rectangle")
-                    encoder.writeObject(new rectangle(s.x,s.y,s.current,s.first,s.color,s.type,((rectangle)s).getLength(),((rectangle)s).getWidth()));
-                else if(s.type == "triangle")
-                    encoder.writeObject(new triangle(s.x,s.y,s.current,s.first,s.color,s.type,((triangle)s).endx,((triangle)s).endy));
-
+            for(Shape c : p.s) {
+                encoder.writeObject(c);
             }
             encoder.close();
             fos.close();
@@ -54,7 +46,7 @@ File n;
             XMLDecoder decoder = new XMLDecoder(fis);
             try {
                 while (true) {
-                    p.s.add((dummyshape) decoder.readObject());
+                    p.s.add((Shape)decoder.readObject());
                 }
             }catch(ArrayIndexOutOfBoundsException e){
             }
@@ -66,4 +58,6 @@ File n;
                ex.printStackTrace();
         }
     }
+
+
 }

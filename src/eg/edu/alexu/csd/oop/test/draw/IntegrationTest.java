@@ -1,11 +1,12 @@
 package eg.edu.alexu.csd.oop.test.draw;
-/*
+
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.awt.Color;
 import java.awt.Point;
+import java.net.MalformedURLException;
 import java.util.HashMap;
 import java.util.List;
 
@@ -48,7 +49,7 @@ public class IntegrationTest {
     }
     
     @org.junit.Test
-    public void testCreateShapes(){
+    public void testCreateShapes() throws MalformedURLException, ClassNotFoundException {
         DrawingEngine instance = (DrawingEngine)TestRunner.getImplementationInstanceForInterface(DrawingEngine.class);
         List<Class<? extends Shape>> supportedShapes = instance.getSupportedShapes();
         assertNotNull("No supported shapes returned, check getSupportedShapes function!", supportedShapes);
@@ -66,4 +67,3 @@ public class IntegrationTest {
 }
 
 
- */

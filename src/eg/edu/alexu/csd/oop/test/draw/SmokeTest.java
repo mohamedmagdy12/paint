@@ -1,5 +1,5 @@
 package eg.edu.alexu.csd.oop.test.draw;
-/*
+
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -9,6 +9,7 @@ import static org.junit.Assert.fail;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
+import java.net.MalformedURLException;
 import java.util.List;
 import java.util.Map;
 
@@ -87,7 +88,7 @@ public class SmokeTest {
     }
     
     @org.junit.Test
-    public void testShapeProperties(){
+    public void testShapeProperties() throws MalformedURLException, ClassNotFoundException {
         DrawingEngine instance = (DrawingEngine)TestRunner.getImplementationInstanceForInterface(DrawingEngine.class);
         List<Class<? extends Shape>> supportedShapes = instance.getSupportedShapes();
         assertNotNull("No supported shapes returned, check getSupportedShapes function!", supportedShapes);
@@ -107,4 +108,3 @@ public class SmokeTest {
 
 }
 
- */

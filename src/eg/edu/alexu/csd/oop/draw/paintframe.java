@@ -11,6 +11,5 @@ public class paintframe {
         f.add(new buttons(c));
         f.setDefaultCloseOperation(f.DISPOSE_ON_CLOSE);
         f.setVisible(true);
-
     }
 }

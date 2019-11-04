@@ -7,6 +7,7 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
 public class repaint extends MouseAdapter implements MouseListener, MouseMotionListener {
+    /*
     boolean dragged = false;
     paintpanel panel;
     dummyshape n;
@@ -26,7 +27,7 @@ public class repaint extends MouseAdapter implements MouseListener, MouseMotionL
             dragged = c.in(x, y);
             if(dragged){
                 n = c;
-                if(n.type == "circle") {
+                if(n.type.equals("circle")) {
                     circle g = new circle(n.x, n.y, n.color, ((circle) n).diameter);
                     g.first = false;
                     g.current = n.current;
@@ -38,7 +39,8 @@ public class repaint extends MouseAdapter implements MouseListener, MouseMotionL
                     g.color = color;
                     G=((circle)g);
                 }
-                else if(n.type == "rectangle"){
+
+                else if(n.type.equals("rectangle")){
 
                     rectangle g = new rectangle(n.x,n.y,n.color,((rectangle)n).getLength(),((rectangle)n).getWidth());
                     g.first = false;
@@ -51,7 +53,7 @@ public class repaint extends MouseAdapter implements MouseListener, MouseMotionL
                     g.color=color;
                     G=((rectangle)g);
                 }
-                else if(n.type == "triangle"){
+                else if(n.type.equals("triangle")){
 
                     triangle g = new triangle(n.x,n.y,n.color);
                     g.setEndx(((triangle)n).getEndx());
@@ -68,7 +70,7 @@ public class repaint extends MouseAdapter implements MouseListener, MouseMotionL
                     g.color=color;
                     G=((triangle)g);
                 }
-                else if(n.type == "square"){
+                else if(n.type.equals("square")){
 
                     square g = new square(n.x,n.y,n.color,((square)n).getLength());
                     g.first = false;
@@ -81,7 +83,7 @@ public class repaint extends MouseAdapter implements MouseListener, MouseMotionL
                     g.color=color;
                     G=((square)g);
                 }
-                else if(n.type == "ellipse"){
+                else if(n.type.equals("ellipse")){
                     ellipse g = new ellipse(n.x,n.y,n.color,((ellipse)n).getA(),((ellipse)n).getB());
                     g.first = false;
                     g.current = n.current;
@@ -107,5 +109,5 @@ public class repaint extends MouseAdapter implements MouseListener, MouseMotionL
         panel.endrepaintlistener();
     }
 
-
+*/
 }
