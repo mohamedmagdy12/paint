@@ -1,17 +1,23 @@
 package eg.edu.alexu.csd.oop.draw;
+import java.awt.*;
 import java.io.*;
 
 import jdk.nashorn.internal.parser.JSONParser;
-//import org.json.simple.JSONArray;
-//import org.json.simple.JSONObject;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
+import javax.jws.soap.SOAPBinding;
+import javax.swing.*;
+
 public class    JSON {
-/*
+
     paintpanel p;
     File n=new File("./test.JSON");
     FileWriter file;
-    FileReader test;
+    FileReader read;
+    FileWriter write;
 
-    int i=0;
+    int i=1,x;
 
     JSONObject obj = new JSONObject();
 
@@ -22,26 +28,42 @@ public class    JSON {
 
     public void save() throws IOException {
 
-        for (dummyshape c : p.s){
-        obj.put(i,c);
-        i++;
-
-
+        for (Shape c : p.s) {
+            obj.put(i, c);
+            this.i++;
         }
-        file=new FileWriter("File.JSON");
-            file.write(obj.toJSONString());
-            System.out.println("Successfully Copied JSON Object to File...");
-            System.out.println("\nJSON Object: " + obj);
+        this.x=this.i-1;
+        obj.put(0,this.x);
 
+
+        System.out.println(obj.toJSONString());
+        this.write=new FileWriter(this.n);
+            write.write(obj.toJSONString());
+
+            JFileChooser fileChooser = new JFileChooser();
+            Component modalToComponent = null;
+             if (fileChooser.showSaveDialog(modalToComponent) == JFileChooser.APPROVE_OPTION) {
+            this.n = fileChooser.getSelectedFile();
+                 System.out.println(n.getPath());
+        }
     }
     public void load() throws IOException {
-
-        for(int x=0;x<i;x++){
-                p.s.add((dummyshape)obj.get(x));
+       // System.out.println("hey "+n.toString());
+        JFileChooser fileChooser = new JFileChooser();
+        Component modalToComponent = null;
+        if (fileChooser.showOpenDialog(modalToComponent) == JFileChooser.APPROVE_OPTION) {
+            this.n = fileChooser.getSelectedFile();
+        }
+                this.x=(int)obj.get(0);
+       // System.out.printf("%d",this.x);
+        for(int z=1;z<=x;z++){
+            Shape q=(Shape) obj.get(z);
+          p.s.add(q);
+            System.out.println(p.s);
         }
 
     }
-*/
+
 
 }
 

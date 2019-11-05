@@ -3,6 +3,7 @@ package eg.edu.alexu.csd.oop.draw;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -29,6 +30,7 @@ public class buttons extends JPanel {
         this.add(btn1);
         this.panel = panel;
         s = panel.s;
+        JSON X=new JSON(this.panel);
 
         btn1.addActionListener(new ActionListener() {
 
@@ -202,9 +204,15 @@ public class buttons extends JPanel {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-               //panel.save("./person.xml");
+               /*panel.save("./person.xml");
                 panel.saveas();
                panel.repaint();
+*/
+                try {
+                    X.save();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
 
             }
 
@@ -218,9 +226,15 @@ public class buttons extends JPanel {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-               // panel.load("./person.xml");
+               /* panel.load("./person.xml");
                 panel.loadfrom();
-                panel.repaint();
+                panel.repaint();*/
+                try {
+                    X.load();
+                    panel.update();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
             }
 
         });
