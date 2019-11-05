@@ -93,12 +93,12 @@ public class line implements Shape {
         return null;
     }
 
-    @Override
+
     public boolean in(int a, int b) {
         return false;
     }
 
-    @Override
+
     public void move(int x, int y) {
     }
 

@@ -103,12 +103,12 @@ public class triangle implements  Shape {
     }
 
 
-    @Override
+
     public boolean in(int a , int b){
         return inside(this.position.x ,position.y+Math.abs(position.y-endy),position.x+Math.abs(position.x-endx),position.y+Math.abs(position.y-endy),position.x+Math.abs(position.x-endx)/2, this.position.y,a,b);
     }
 
-    @Override
+
     public void move(int x, int y) {
         int l = this.getLength();
         int w = this.getWidth();

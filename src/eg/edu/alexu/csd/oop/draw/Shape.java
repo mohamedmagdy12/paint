@@ -18,7 +18,6 @@ public interface Shape{
     public void draw(java.awt.Graphics canvas); // redraw the shape on the canvas
 
     public Object clone() throws CloneNotSupportedException; // create a deep clone of the shape
-    public boolean in(int a , int b);
-    public void move(int x , int y);
+
 
 }

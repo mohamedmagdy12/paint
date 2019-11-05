@@ -5,7 +5,7 @@ import javax.swing.*;
 public class paintframe {
     public static void main(String[] args) {
        JFrame f = new JFrame();
-        f.setSize(900,650);
+        f.setSize(1360,768);
         paintpanel c = new paintpanel();
         f.setContentPane(c);
         f.add(new buttons(c));

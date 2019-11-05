@@ -63,22 +63,26 @@ public class paintpanel extends JPanel implements DrawingEngine {
         takecopy();
     }
 
-    /*
+
     public void endresizelistener(){
-        redo[n1] = x.g;
+        /*redo[n1] = x.g;
         x.g.current = x.n.current;
-        x.g.first = false;
+        x.g.first = false;*/
         this.removeMouseListener(x);
         this.removeMouseMotionListener(x);
-    }
-    public void endrepaintlistener() {
-        redo[n1] = t.G;
-        t.G.current = t.n.current;
-        t.G.first = false;
-        this.removeMouseListener(t);
-        this.removeMouseMotionListener(t);
+        takecopy();
     }
 
+    public void endrepaintlistener() {
+       /* redo[n1] = t.G;
+        t.G.current = t.n.current;
+        t.G.first = false;
+        */
+        this.removeMouseListener(t);
+        this.removeMouseMotionListener(t);
+        takecopy();
+    }
+/*
     @Override
     public void refresh(Graphics canvas) {
         repaint();
@@ -305,6 +309,7 @@ public class paintpanel extends JPanel implements DrawingEngine {
         classList.add(loadedClass);
        return classList;
     }
+
 
 
 

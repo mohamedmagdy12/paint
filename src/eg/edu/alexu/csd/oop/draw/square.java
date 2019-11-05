@@ -79,13 +79,13 @@ public class square implements Shape{
     public void setLength(int length) {
         this.length = length;
     }
-    @Override
+
     public boolean in(int a,int b){
         if(a-this.position.x <= this.length && a-this.position.x >=0 && b-this.position.y <= this.length && b-this.position.y >=0)return true;
         else return false;
     }
 
-    @Override
+
     public void move(int x, int y) {
         position.x = x-this.getLength()/2;
         position.y = y-this.getLength()/2;

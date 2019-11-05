@@ -114,7 +114,7 @@ public class rectangle implements Shape{
         else return false;
     }
 
-    @Override
+
     public void move(int x, int y) {
         position.x = x-this.getLength()/2;
         position.y = y-this.getLength()/2;

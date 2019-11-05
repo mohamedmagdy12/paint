@@ -6,11 +6,11 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
 public class resize extends MouseAdapter implements MouseListener, MouseMotionListener {
-    /*
+
     boolean dragged = false;
     paintpanel panel;
-    dummyshape n;
-    dummyshape g;
+    Shape n;
+
     public resize(paintpanel panel) {
         this.panel = panel;
     }
@@ -20,46 +20,37 @@ public class resize extends MouseAdapter implements MouseListener, MouseMotionLi
         super.mousePressed(e);
         int x = e.getX();
         int y = e.getY();
-        for(dummyshape c : panel.s) {
-            dragged = c.in(x, y);
-            if(dragged){
-                n = c;
-
-                if(n.type.equals("circle")) {
-                    circle g = new circle(n.x, n.y, n.color, ((circle) n).diameter);
-                    g.first = false;
-                    g.current = n.current;
-                    panel.history[++panel.n1] = g;
-
-
+        for (Shape c : panel.s) {
+            if(c.getClass() == circle.class){
+                dragged = ((circle)c).in(x,y);
+                if (dragged) {
+                    n = c;
+                    break;
                 }
-                else if(n.type.equals("rectangle")){
-                    rectangle g = new rectangle(n.x,n.y,n.color,((rectangle)n).getLength(),((rectangle)n).getWidth());
-                    g.first = false;
-                    g.current = n.current;
-                    panel.history[++panel.n1] = g;
+            } else if(c.getClass() == rectangle.class){
+                dragged = ((rectangle)c).in(x,y);
+                if (dragged) {
+                    n = c;
+                    break;
                 }
-                else if(n.type.equals("triangle")){
-                    triangle g = new triangle(n.x,n.y,n.color);
-                    g.setEndx(((triangle)n).getEndx());
-                    g.setEndy(((triangle)n).getEndy());
-                    g.first = false;
-                    g.current = n.current;
-                    panel.history[++panel.n1] = g;
+            } if(c.getClass() == square.class){
+                dragged = ((square)c).in(x,y);
+                if (dragged) {
+                    n = c;
+                    break;
                 }
-                else if(n.type.equals("square")){
-                    square g = new square(n.x,n.y,n.color,((square)n).getLength());
-                    g.first = false;
-                    g.current = n.current;
-                    panel.history[++panel.n1] = g;
+            } if(c.getClass() == ellipse.class){
+                dragged = ((ellipse)c).in(x,y);
+                if (dragged) {
+                    n = c;
+                    break;
                 }
-                else if(n.type.equals("ellipse")){
-                    ellipse g = new ellipse(n.x,n.y,n.color,((ellipse)n).getA(),((ellipse)n).getB());
-                    g.first = false;
-                    g.current = n.current;
-                    panel.history[++panel.n1] = g;
+            } if(c.getClass() == triangle.class){
+                dragged = ((triangle)c).in(x,y);
+                if (dragged) {
+                    n = c;
+                    break;
                 }
-                break;
             }
         }
     }
@@ -78,49 +69,34 @@ public class resize extends MouseAdapter implements MouseListener, MouseMotionLi
         if(dragged){
             int x = e.getX();
             int y = e.getY();
-            if(n.type.equals("circle")) {
-                g=(circle)g;
-                g = new circle(n.x, n.y, n.color, ((circle) n).diameter);
+            if(n.getClass()==circle.class) {
                 ((circle)n).diameter = x - ((circle) n).diameter / 2;
-                ((circle)g).diameter = x - ((circle) g).diameter / 2;
                 panel.update();
             }
-            if(n.type.equals("square")){
-                g=new square(n.x,n.y,n.color,((square)n).getLength());
-                ((square) n).setLength(Math.max(Math.abs(n.x-x),Math.abs(n.y-y)));
-                ((square) g).setLength(Math.max(Math.abs(n.x-x),Math.abs(n.y-y)));
+            if(n.getClass()==square.class){
+                ((square) n).setLength(Math.max(Math.abs(n.getPosition().x-x),Math.abs(n.getPosition().y-y)));
                 panel.update();
             }
-            if(n.type.equals("rectangle")){
-                g = (rectangle)g;
-                g = new rectangle(n.x,n.y,n.color,((rectangle)n).getLength(),((rectangle)n).getWidth());
-                ((rectangle) n).setLength(Math.abs(e.getX() - n.x));
-                ((rectangle) n).setWidth(Math.abs(e.getY() - n.y));
-                ((rectangle) g).setLength(Math.abs(e.getX() - g.x));
-                ((rectangle) g).setWidth(Math.abs(e.getY() - g.y));
+            if(n.getClass()==rectangle.class){
+                ((rectangle) n).setLength(Math.abs(e.getX() - n.getPosition().x));
+                ((rectangle) n).setWidth(Math.abs(e.getY() - n.getPosition().y));
                 panel.update();
             }
-            if(n.type.equals("ellipse")){
-                g=new ellipse(n.x,n.y,n.color,((ellipse)n).getA(),((ellipse)n).getB());
-                ((ellipse) n).setA(Math.abs(e.getX() - n.x));
-                ((ellipse) n).setB(Math.abs(e.getY() - n.y));
-                ((ellipse) g).setA(Math.abs(e.getX() - n.x));
-                ((ellipse) g).setB(Math.abs(e.getY() - n.y));
-                panel.update();
-            }
-            if(n.type.equals("triangle")){
-                if(x>=n.x&&y>=n.y){
-                    g=new triangle(n.x,n.y,n.color);
+            if(n.getClass()==ellipse.class){
+                ((ellipse) n).setA(Math.abs(e.getX() - n.getPosition().x));
+                ((ellipse) n).setB(Math.abs(e.getY() - n.getPosition().y));
 
+                panel.update();
+            }
+            if(n.getClass()==triangle.class){
+                if(x>=n.getPosition().x&&y>=n.getPosition().y){
                     ((triangle)n).endx=e.getX();
                     ((triangle)n).endy=e.getY();
-                    ((triangle)g).endx=e.getX();
-                    ((triangle)g).endy=e.getY();
                     panel.update();
                 }
             }
         }
     }
 
-     */
+
 }

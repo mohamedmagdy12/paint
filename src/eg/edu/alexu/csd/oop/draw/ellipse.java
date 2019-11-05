@@ -109,7 +109,7 @@ public class ellipse implements Shape{
     public int getB() {
         return b;
     }
-    @Override
+
     public boolean  in(int A , int B){
         double h=this.position.x+a/2;
         double k=this.position.y+b/2;
@@ -119,7 +119,7 @@ public class ellipse implements Shape{
         else return false;
     }
 
-    @Override
+
     public void move(int x, int y) {
         position.x = x-this.getA()/2;
         position.y = y-this.getB()/2;

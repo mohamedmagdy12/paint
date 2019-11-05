@@ -18,7 +18,7 @@ public class buttons extends JPanel {
     private JButton btn6;
     private JButton btn7;
     private JButton btn8;
-    private JButton btn9, btn10, btn11, btn12, btn13;
+    private JButton btn9, btn10, btn11, btn12, btn13,btn14;
     private paintpanel panel;
     List<Shape> s;
     JColorChooser jcc;
@@ -43,20 +43,7 @@ public class buttons extends JPanel {
 
         });
 
-        this.btn2 = new JButton("move");
-        this.add(btn2);
-        this.panel = panel;
-        btn2.addActionListener(new ActionListener() {
 
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                movelisetner h = new movelisetner(panel);
-                panel.addMouseListener(h);
-                panel.addMouseMotionListener(h);
-                panel.g= h;
-            }
-
-        });
 
 
         this.btn3 = new JButton("rectangle");
@@ -138,7 +125,21 @@ public class buttons extends JPanel {
             }
 
         });
-/*
+        this.btn2 = new JButton("move");
+        this.add(btn2);
+        this.panel = panel;
+        btn2.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                movelisetner h = new movelisetner(panel);
+                panel.addMouseListener(h);
+                panel.addMouseMotionListener(h);
+                panel.g= h;
+            }
+
+        });
+
         this.btn10 = new JButton("resize");
         this.add(btn10);
         this.panel = panel;
@@ -153,7 +154,23 @@ public class buttons extends JPanel {
             }
 
         });
-*/
+        this.btn13 = new JButton("repaint");
+        this.add(btn13);
+        this.panel = panel;
+        btn13.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Color c = jcc.showDialog(null , "please select a color", Color.red);
+                repaint x=new repaint(panel,c);
+                panel.addMouseListener(x);
+                panel.addMouseMotionListener(x);
+                panel.t= x;
+
+            }
+
+        });
+
         this.btn8 = new JButton("undo");
         this.add(btn8);
         this.panel = panel;
@@ -207,23 +224,9 @@ public class buttons extends JPanel {
             }
 
         });
-/*
-        this.btn13 = new JButton("repaint");
-        this.add(btn13);
-        this.panel = panel;
-        btn13.addActionListener(new ActionListener() {
 
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Color c = jcc.showDialog(null , "please select a color", Color.red);
-                repaint x=new repaint(panel,c);
-                panel.addMouseListener(x);
-                panel.addMouseMotionListener(x);
-                panel.t= x;
-                panel.update();
-            }
 
-        });
+
     }
 
 
@@ -234,6 +237,4 @@ public class buttons extends JPanel {
 
 }
 
- */
-    }
-}
+
