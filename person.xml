@@ -10,14 +10,14 @@
       <string>x</string>
       <void method="set">
        <object idref="Point0"/>
-       <int>241</int>
+       <int>386</int>
       </void>
      </void>
      <void class="java.awt.Point" method="getField">
       <string>y</string>
       <void method="set">
        <object idref="Point0"/>
-       <int>225</int>
+       <int>254</int>
       </void>
      </void>
     </object>
@@ -27,101 +27,125 @@
    <string>diameter</string>
    <void method="set">
     <object idref="circle0"/>
-    <int>177</int>
+    <int>157</int>
    </void>
   </void>
   <void property="color">
    <object class="java.awt.Color" id="Color0">
     <int>255</int>
-    <int>0</int>
-    <int>0</int>
+    <int>153</int>
+    <int>153</int>
     <int>255</int>
    </object>
   </void>
   <void property="fillColor">
    <object idref="Color0"/>
   </void>
+  <void property="properties">
+   <void method="remove">
+    <string>diameter</string>
+   </void>
+  </void>
  </object>
- <object class="eg.edu.alexu.csd.oop.draw.ellipse" id="ellipse0">
-  <void class="eg.edu.alexu.csd.oop.draw.ellipse" method="getField">
+ <object class="eg.edu.alexu.csd.oop.draw.circle" id="circle1">
+  <void class="eg.edu.alexu.csd.oop.draw.circle" method="getField">
    <string>position</string>
    <void method="set">
-    <object idref="ellipse0"/>
+    <object idref="circle1"/>
     <object class="java.awt.Point" id="Point1">
      <void class="java.awt.Point" method="getField">
       <string>x</string>
       <void method="set">
        <object idref="Point1"/>
-       <int>598</int>
+       <int>386</int>
       </void>
      </void>
      <void class="java.awt.Point" method="getField">
       <string>y</string>
       <void method="set">
        <object idref="Point1"/>
-       <int>177</int>
+       <int>254</int>
       </void>
      </void>
     </object>
    </void>
   </void>
-  <void property="a">
-   <int>222</int>
-  </void>
-  <void property="b">
-   <int>101</int>
+  <void class="eg.edu.alexu.csd.oop.draw.circle" method="getField">
+   <string>diameter</string>
+   <void method="set">
+    <object idref="circle1"/>
+    <int>157</int>
+   </void>
   </void>
   <void property="color">
    <object class="java.awt.Color" id="Color1">
+    <int>255</int>
     <int>153</int>
     <int>153</int>
-    <int>0</int>
     <int>255</int>
    </object>
   </void>
   <void property="fillColor">
    <object idref="Color1"/>
   </void>
- </object>
- <object class="eg.edu.alexu.csd.oop.draw.triangle" id="triangle0">
-  <void class="eg.edu.alexu.csd.oop.draw.triangle" method="getField">
-   <string>position</string>
-   <void method="set">
-    <object idref="triangle0"/>
-    <object class="java.awt.Point" id="Point2">
-     <void class="java.awt.Point" method="getField">
-      <string>x</string>
-      <void method="set">
-       <object idref="Point2"/>
-       <int>499</int>
-      </void>
-     </void>
-     <void class="java.awt.Point" method="getField">
-      <string>y</string>
-      <void method="set">
-       <object idref="Point2"/>
-       <int>337</int>
-      </void>
-     </void>
-    </object>
+  <void property="properties">
+   <void method="remove">
+    <string>diameter</string>
    </void>
   </void>
+ </object>
+ <object class="eg.edu.alexu.csd.oop.draw.RoundRectangle" id="RoundRectangle0">
   <void property="color">
-   <object class="java.awt.Color" id="Color2">
+   <object class="java.awt.Color">
     <int>0</int>
     <int>51</int>
     <int>51</int>
     <int>255</int>
    </object>
   </void>
-  <void property="endx">
-   <int>672</int>
-  </void>
-  <void property="endy">
-   <int>491</int>
-  </void>
   <void property="fillColor">
-   <object idref="Color2"/>
+   <object class="java.awt.Color">
+    <int>51</int>
+    <int>51</int>
+    <int>0</int>
+    <int>255</int>
+   </object>
+  </void>
+  <void property="position">
+   <object class="java.awt.Point" id="Point2">
+    <void class="java.awt.Point" method="getField">
+     <string>x</string>
+     <void method="set">
+      <object idref="Point2"/>
+      <int>37</int>
+     </void>
+    </void>
+    <void class="java.awt.Point" method="getField">
+     <string>y</string>
+     <void method="set">
+      <object idref="Point2"/>
+      <int>38</int>
+     </void>
+    </void>
+   </object>
+  </void>
+  <void property="properties">
+   <void method="put">
+    <string>Length</string>
+    <double>48.0</double>
+   </void>
+   <void method="put">
+    <string>ArcWidth</string>
+    <double>49.0</double>
+   </void>
+   <void method="put">
+    <string>ArcLength</string>
+    <double>49.0</double>
+   </void>
+   <void method="put">
+    <string>Width</string>
+    <double>29.0</double>
+   </void>
   </void>
  </object>
 </java>

@@ -1,16 +1,20 @@
 package eg.edu.alexu.csd.oop.draw;
 
 import java.awt.*;
+import java.util.HashMap;
 import java.util.Map;
 
 public class square implements Shape{
     public Point position;
-    private Map<String, Double> properties;
+    private Map<String, Double> properties  = new HashMap();;
     private Color color;
     private Color fColor;
     private int length;
+    public boolean tryDraw;
 
     public square() {
+        properties.put("length",0D);
+
     }
 
     public square(int x, int y, Color color,Color fColor, int length) {
@@ -33,6 +37,7 @@ public class square implements Shape{
 
     @Override
     public void setProperties(Map<String, Double> properties) {
+
         this.properties = properties;
     }
 

@@ -42,6 +42,7 @@ public class IntegrationTest {
             shape.setProperties(new HashMap<String, Double>());
             instance.addShape(shape);
             instance.refresh(new DebugGraphics());
+            shape.isDraw();
             assertTrue("Failed to use dummy Graphics object to draw dummy Shape", shape.isDraw());
         } catch (Throwable e) {
             TestRunner.fail("Failed to use dummy Graphics object", e);

@@ -2,15 +2,16 @@ package eg.edu.alexu.csd.oop.draw;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.HashMap;
 import java.util.Map;
 
 public class line implements Shape {
     public Point position;
-    private Map<String, Double> properties;
+    private Map<String, Double> properties = new HashMap();;
     private Color color;
     private Color fColor;
     int endX, endY;
-
+    public boolean tryDraw;
     public int getEndX() {
         return endX;
     }
@@ -20,7 +21,8 @@ public class line implements Shape {
     }
 
     public line() {
-
+        properties.put("endX",0D);
+        properties.put("endY",0D);
     }
 
     public line(int x , int y, Color color, int endX,int endY) {
@@ -54,6 +56,7 @@ public class line implements Shape {
 
     @Override
     public void setProperties(Map<String, Double> properties) {
+
         this.properties = properties;
     }
 

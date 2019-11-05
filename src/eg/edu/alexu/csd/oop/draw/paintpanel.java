@@ -1,9 +1,12 @@
 package eg.edu.alexu.csd.oop.draw;
 import com.sun.scenario.effect.impl.sw.java.JSWBlend_HARD_LIGHTPeer;
 import eg.edu.alexu.csd.oop.test.DummyShape;
+import org.json.simple.parser.ParseException;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
 import java.io.File;
@@ -64,7 +67,7 @@ public class paintpanel extends JPanel implements DrawingEngine {
     }
 
 
-    public void endresizelistener(){
+    public void endresizelistener() {
         /*redo[n1] = x.g;
         x.g.current = x.n.current;
         x.g.first = false;*/
@@ -82,45 +85,46 @@ public class paintpanel extends JPanel implements DrawingEngine {
         this.removeMouseMotionListener(t);
         takecopy();
     }
-/*
-    @Override
-    public void refresh(Graphics canvas) {
-        repaint();
-    }
 
-    @Override
-    public void addShape(Shape shape) {
-        s.add((dummyshape) shape);
-    }
+    /*
+        @Override
+        public void refresh(Graphics canvas) {
+            repaint();
+        }
 
-    @Override
-    public void removeShape(Shape shape) {
-      s.remove(shape);
-    }
+        @Override
+        public void addShape(Shape shape) {
+            s.add((dummyshape) shape);
+        }
 
-    @Override
-    public void updateShape(Shape oldShape, Shape newShape) {
-       s.set(s.indexOf(oldShape),(dummyshape) newShape);
-    }
+        @Override
+        public void removeShape(Shape shape) {
+          s.remove(shape);
+        }
 
-    @Override
-    public Shape[] getShapes() {
-        return (dummyshape[])s.toArray();
-    }
+        @Override
+        public void updateShape(Shape oldShape, Shape newShape) {
+           s.set(s.indexOf(oldShape),(dummyshape) newShape);
+        }
 
-    @Override
-    public List<Class<? extends Shape>> getSupportedShapes() {
-        List<Class<? extends Shape>> classList = new ArrayList<Class<? extends Shape>>();
+        @Override
+        public Shape[] getShapes() {
+            return (dummyshape[])s.toArray();
+        }
 
-        classList.add(circle.class);
-        classList.add(triangle.class);
-        classList.add(square.class);
-        classList.add(rectangle.class);
-        classList.add(line.class);
-        classList.add(ellipse.class);
-        return classList;
-    }
-    */
+        @Override
+        public List<Class<? extends Shape>> getSupportedShapes() {
+            List<Class<? extends Shape>> classList = new ArrayList<Class<? extends Shape>>();
+
+            classList.add(circle.class);
+            classList.add(triangle.class);
+            classList.add(square.class);
+            classList.add(rectangle.class);
+            classList.add(line.class);
+            classList.add(ellipse.class);
+            return classList;
+        }
+        */
     @Override
     public void undo() {
         System.out.println(s.size());
@@ -172,7 +176,7 @@ public class paintpanel extends JPanel implements DrawingEngine {
 
             decoder.close();
             fis.close();
-            load();
+            //load();
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -188,7 +192,7 @@ public class paintpanel extends JPanel implements DrawingEngine {
         n1++;
         arr[0] = new LinkedList<Shape>();
         arr[n1] = new LinkedList<Shape>();
-        arr[n1+1] = null;
+        arr[n1 + 1] = null;
         for (Shape c : s) {
             if (c.getClass() == circle.class) {
                 circle g = new circle(c.getPosition().x, c.getPosition().y, c.getColor(), c.getFillColor(), ((circle) c).getDiameter());
@@ -199,13 +203,11 @@ public class paintpanel extends JPanel implements DrawingEngine {
                 arr[n1].add(new square(c.getPosition().x, c.getPosition().y, c.getColor(), c.getFillColor(), ((square) c).getLength()));
             } else if (c.getClass() == line.class) {
                 arr[n1].add(new line(c.getPosition().x, c.getPosition().y, c.getColor(), c.getFillColor(), ((line) c).endX, ((line) c).endY));
-
-            }else if (c.getClass() == ellipse.class) {
+            } else if (c.getClass() == ellipse.class) {
                 arr[n1].add(new ellipse(c.getPosition().x, c.getPosition().y, c.getColor(), c.getFillColor(), ((ellipse) c).getA(), ((ellipse) c).getB()));
-            }else if (c.getClass() == triangle.class) {
+            } else if (c.getClass() == triangle.class) {
                 arr[n1].add(new triangle(c.getPosition().x, c.getPosition().y, c.getColor(), c.getFillColor(), ((triangle) c).getEndx(), ((triangle) c).getEndy()));
-            }
-            else {
+            } else {
                 arr[n1].add(c);
             }
         }
@@ -220,22 +222,22 @@ public class paintpanel extends JPanel implements DrawingEngine {
                 s.add(g);
             } else if (c.getClass() == rectangle.class) {
                 s.add(new rectangle(c.getPosition().x, c.getPosition().y, c.getColor(), ((rectangle) c).getLength(), ((rectangle) c).getWidth()));
-            }else if (c.getClass() == square.class) {
-             s.add(new square(c.getPosition().x, c.getPosition().y, c.getColor(), c.getFillColor(), ((square) c).getLength()));
-            }else if (c.getClass() == line.class) {
-               s.add(new line(c.getPosition().x, c.getPosition().y, c.getColor(), c.getFillColor(), ((line) c).endX, ((line) c).endY));
-            }else if (c.getClass() == ellipse.class) {
+            } else if (c.getClass() == square.class) {
+                s.add(new square(c.getPosition().x, c.getPosition().y, c.getColor(), c.getFillColor(), ((square) c).getLength()));
+            } else if (c.getClass() == line.class) {
+                s.add(new line(c.getPosition().x, c.getPosition().y, c.getColor(), c.getFillColor(), ((line) c).endX, ((line) c).endY));
+            } else if (c.getClass() == ellipse.class) {
                 s.add(new ellipse(c.getPosition().x, c.getPosition().y, c.getColor(), c.getFillColor(), ((ellipse) c).getA(), ((ellipse) c).getB()));
-            }else if (c.getClass() == triangle.class) {
+            } else if (c.getClass() == triangle.class) {
                 s.add(new triangle(c.getPosition().x, c.getPosition().y, c.getColor(), c.getFillColor(), ((triangle) c).getEndx(), ((triangle) c).getEndy()));
-            }
-            else {
+            } else {
                 s.add(c);
             }
         }
 
     }
-    public void saveas(){
+
+    public void saveas() {
         JFileChooser fileChooser = new JFileChooser();
         Component modalToComponent = null;
         if (fileChooser.showSaveDialog(modalToComponent) == JFileChooser.APPROVE_OPTION) {
@@ -243,12 +245,33 @@ public class paintpanel extends JPanel implements DrawingEngine {
             save(file.getPath());
         }
     }
-    public void loadfrom(){
+
+    public void saveasjson() throws IOException {
+        JFileChooser fileChooser = new JFileChooser();
+        Component modalToComponent = null;
+        if (fileChooser.showSaveDialog(modalToComponent) == JFileChooser.APPROVE_OPTION) {
+            File file = fileChooser.getSelectedFile();
+            JSON s = new JSON(this, file.getPath());
+            s.save(file.getPath());
+        }
+    }
+
+    public void loadfrom() {
         JFileChooser fileChooser = new JFileChooser();
         Component modalToComponent = null;
         if (fileChooser.showOpenDialog(modalToComponent) == JFileChooser.APPROVE_OPTION) {
             File file = fileChooser.getSelectedFile();
             load(file.getPath());
+        }
+    }
+
+    public void loadfromJson() throws IOException, ParseException {
+        JFileChooser fileChooser = new JFileChooser();
+        Component modalToComponent = null;
+        if (fileChooser.showOpenDialog(modalToComponent) == JFileChooser.APPROVE_OPTION) {
+            File file = fileChooser.getSelectedFile();
+            JSON s = new JSON(this, file.getPath());
+            s.load(file.getPath());
         }
     }
 
@@ -261,10 +284,9 @@ public class paintpanel extends JPanel implements DrawingEngine {
     }
 
 
-
     @Override
     public void refresh(Graphics canvas) {
-
+         paint(canvas);
     }
 
     @Override
@@ -301,17 +323,36 @@ public class paintpanel extends JPanel implements DrawingEngine {
         List<Class<? extends Shape>> classList = new ArrayList<Class<? extends Shape>>();
         classList.add(circle.class);
         classList.add(rectangle.class);
+        classList.add(triangle.class);
+        classList.add(square.class);
+        classList.add(line.class);
+        classList.add(ellipse.class);
+
         File dir = new File("C:\\Users\\magdy\\drawoop\\RoundRectangle.jar");
         URL loadPath = dir.toURI().toURL();
         URL[] classUrl = new URL[]{loadPath};
         ClassLoader cl = new URLClassLoader(classUrl);
         Class loadedClass = cl.loadClass("eg.edu.alexu.csd.oop.draw.RoundRectangle"); // must be in package.class name format
         classList.add(loadedClass);
-       return classList;
+
+
+        return classList;
     }
 
-
-
+    public Class plugin() throws MalformedURLException, ClassNotFoundException {
+        File file = null;
+        JFileChooser fileChooser = new JFileChooser();
+        Component modalToComponent = null;
+        if (fileChooser.showOpenDialog(modalToComponent) == JFileChooser.APPROVE_OPTION) {
+            file = fileChooser.getSelectedFile();
+        }
+        File dir = file;
+        URL loadPath = dir.toURI().toURL();
+        URL[] classUrl = new URL[]{loadPath};
+        ClassLoader cl = new URLClassLoader(classUrl);
+        Class loadedClass = cl.loadClass("eg.edu.alexu.csd.oop.draw.RoundRectangle"); // must be in package.class name format
+        return loadedClass;
+    }
 
 
 }

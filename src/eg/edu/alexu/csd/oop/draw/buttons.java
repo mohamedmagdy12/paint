@@ -1,11 +1,13 @@
 package eg.edu.alexu.csd.oop.draw;
 
+import org.json.simple.parser.ParseException;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
-import java.util.Iterator;
-import java.util.LinkedList;
+import java.net.MalformedURLException;
+import java.util.*;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.swing.*;
@@ -19,8 +21,9 @@ public class buttons extends JPanel {
     private JButton btn6;
     private JButton btn7;
     private JButton btn8;
-    private JButton btn9, btn10, btn11, btn12, btn13,btn14;
+    public JButton btn9, btn10, btn11, btn12, btn13,btn14,btn15;
     private paintpanel panel;
+    Class t;
     List<Shape> s;
     JColorChooser jcc;
 
@@ -30,7 +33,7 @@ public class buttons extends JPanel {
         this.add(btn1);
         this.panel = panel;
         s = panel.s;
-        JSON X=new JSON(this.panel);
+
 
         btn1.addActionListener(new ActionListener() {
 
@@ -204,15 +207,18 @@ public class buttons extends JPanel {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-               /*panel.save("./person.xml");
+               panel.save("./person.xml");
                 panel.saveas();
                panel.repaint();
-*/
+
+               /*
                 try {
-                    X.save();
+                    panel.saveasjson();
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
+                */
+
 
             }
 
@@ -226,15 +232,69 @@ public class buttons extends JPanel {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-               /* panel.load("./person.xml");
+                panel.load("./person.xml");
                 panel.loadfrom();
-                panel.repaint();*/
+                panel.repaint();
+               /*
                 try {
-                    X.load();
+                   panel.loadfromJson();
                     panel.update();
-                } catch (IOException ex) {
+                } catch (IOException | ParseException ex) {
                     ex.printStackTrace();
                 }
+
+                */
+            }
+
+
+
+        });
+        this.btn15 = new JButton("plugin");
+        btn14 = new JButton("Round Rectangle");
+        this.add(btn15);
+        this.panel = panel;
+        btn15.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    t=panel.plugin();
+                   if(t.getName().equals("eg.edu.alexu.csd.oop.draw.RoundRectangle")){
+                       panel.add(btn14);
+                   }
+                } catch (MalformedURLException ex) {
+                    ex.printStackTrace();
+                } catch (ClassNotFoundException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+
+
+        btn14.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Color c = jcc.showDialog(null , "please select a color", Color.red);
+                Color h = jcc.showDialog(null , "please select a fill color", Color.red);
+                String x = JOptionPane.showInputDialog("enter position x");
+                String y = JOptionPane.showInputDialog("enter position y");
+                String y1 = JOptionPane.showInputDialog("enter width");
+                String y2 = JOptionPane.showInputDialog("enter length");
+                String y3 = JOptionPane.showInputDialog("enter arcWidth");
+                String y4 = JOptionPane.showInputDialog("enter arclength");
+              RoundRectangle R = new RoundRectangle();
+              R.setColor(c);
+              R.setFillColor(h);
+              R.setPosition(new Point(Integer.parseInt(x),Integer.parseInt(y)));
+              Map<String, Double> p = new HashMap<>();
+                p.put("Width", Double.parseDouble(y1));
+                p.put("Length", Double.parseDouble(y2));
+                p.put("ArcWidth", Double.parseDouble(y3));
+                p.put("ArcLength", Double.parseDouble(y4));
+              R.setProperties(p);
+              panel.addShape(R);
+              panel.update();
             }
 
         });
@@ -242,7 +302,6 @@ public class buttons extends JPanel {
 
 
     }
-
 
 
 

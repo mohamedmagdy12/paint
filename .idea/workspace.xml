@@ -7,7 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abc0c1fc-9b89-4176-939e-0ec366e2bea8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json_simple_1_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/json_simple_1_1_11.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/hamcrest_core_1_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/hamcrest_core_1_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/json_simple_1_1_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/drawoop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/drawoop.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/drawoop/eg/edu/alexu/csd/oop/draw/JSON.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/drawoop/eg/edu/alexu/csd/oop/draw/JSON.class" afterDir="false" />
@@ -25,8 +27,25 @@
       <change beforePath="$PROJECT_DIR$/out/production/drawoop/eg/edu/alexu/csd/oop/draw/buttons$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/drawoop/eg/edu/alexu/csd/oop/draw/buttons$8.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/drawoop/eg/edu/alexu/csd/oop/draw/buttons$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/drawoop/eg/edu/alexu/csd/oop/draw/buttons$9.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/drawoop/eg/edu/alexu/csd/oop/draw/buttons.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/drawoop/eg/edu/alexu/csd/oop/draw/buttons.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/drawoop/eg/edu/alexu/csd/oop/draw/circle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/drawoop/eg/edu/alexu/csd/oop/draw/circle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/drawoop/eg/edu/alexu/csd/oop/draw/ellipse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/drawoop/eg/edu/alexu/csd/oop/draw/ellipse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/drawoop/eg/edu/alexu/csd/oop/draw/line.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/drawoop/eg/edu/alexu/csd/oop/draw/line.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/drawoop/eg/edu/alexu/csd/oop/draw/paintpanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/drawoop/eg/edu/alexu/csd/oop/draw/paintpanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/drawoop/eg/edu/alexu/csd/oop/draw/rectangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/drawoop/eg/edu/alexu/csd/oop/draw/rectangle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/drawoop/eg/edu/alexu/csd/oop/draw/square.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/drawoop/eg/edu/alexu/csd/oop/draw/square.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/drawoop/eg/edu/alexu/csd/oop/draw/triangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/drawoop/eg/edu/alexu/csd/oop/draw/triangle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/drawoop/eg/edu/alexu/csd/oop/test/draw/IntegrationTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/drawoop/eg/edu/alexu/csd/oop/test/draw/IntegrationTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person.xml" beforeDir="false" afterPath="$PROJECT_DIR$/person.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/JSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/JSON.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/buttons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/buttons.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/circle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/ellipse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/ellipse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/line.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/line.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/paintpanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/paintpanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/rectangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/square.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/draw/triangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/test/draw/IntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/test/draw/IntegrationTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +69,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="findjar.last.used.dir" value="$PROJECT_DIR$" />
-    <property name="last_opened_file_path" value="H:/SearchPic/json-simple-1.1.1.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../junit-4.13-rc-1.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -85,7 +104,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IntegrationTest.testCreateShapes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IntegrationTest.testGraphics" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="drawoop" />
       <extension name="coverage">
         <pattern>
@@ -95,7 +114,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="eg.edu.alexu.csd.oop.test.draw" />
       <option name="MAIN_CLASS_NAME" value="eg.edu.alexu.csd.oop.test.draw.IntegrationTest" />
-      <option name="METHOD_NAME" value="testCreateShapes" />
+      <option name="METHOD_NAME" value="testGraphics" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -133,6 +152,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SmokeTest.testShapeProperties" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="drawoop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="eg.edu.alexu.csd.oop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="eg.edu.alexu.csd.oop.test.draw" />
+      <option name="MAIN_CLASS_NAME" value="eg.edu.alexu.csd.oop.test.draw.SmokeTest" />
+      <option name="METHOD_NAME" value="testShapeProperties" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="eg.edu.alexu.csd.oop in drawoop" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="drawoop" />
       <extension name="coverage">
@@ -147,27 +182,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="eg.edu.alexu.csd.oop.draw in drawoop" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="drawoop" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="eg.edu.alexu.csd.oop.draw.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="eg.edu.alexu.csd.oop.draw" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.eg.edu.alexu.csd.oop in drawoop" />
-        <item itemvalue="JUnit.SanityTest.testUsePlugins" />
-        <item itemvalue="JUnit.IntegrationTest.testCreateShapes" />
         <item itemvalue="JUnit.SanityTest.testSaveAndLoadXML" />
-        <item itemvalue="JUnit.eg.edu.alexu.csd.oop.draw in drawoop" />
+        <item itemvalue="JUnit.IntegrationTest.testGraphics" />
+        <item itemvalue="JUnit.SmokeTest.testShapeProperties" />
+        <item itemvalue="JUnit.SanityTest.testUsePlugins" />
       </list>
     </recent_temporary>
   </component>
@@ -282,6 +303,21 @@
           <url>file://$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/test/draw/SanityTest.java</url>
           <line>446</line>
           <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/test/draw/SmokeTest.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/test/draw/IntegrationTest.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/test/draw/SanityTest.java</url>
+          <line>329</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

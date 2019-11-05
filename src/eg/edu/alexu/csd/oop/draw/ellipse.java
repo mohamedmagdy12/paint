@@ -8,19 +8,23 @@ import javax.crypto.Cipher;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.HashMap;
 import java.util.Map;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 
 public class ellipse implements Shape{
     public Point position;
-    private Map<String, Double> properties;
+    private Map<String, Double> properties = new HashMap();;
     private Color color;
     private Color fColor;
     private int a;
     private int b;
+    public boolean tryDraw;
 
     public ellipse() {
+        properties.put("a",0D);
+        properties.put("b",0D);
     }
 
 
@@ -55,6 +59,7 @@ public class ellipse implements Shape{
 
     @Override
     public void setProperties(Map<String, Double> properties) {
+
         this.properties = properties;
     }
 

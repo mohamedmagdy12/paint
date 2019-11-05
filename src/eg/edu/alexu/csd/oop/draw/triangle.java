@@ -2,14 +2,16 @@ package eg.edu.alexu.csd.oop.draw;
 
 import java.awt.*;
 import java.lang.Math;
+import java.util.HashMap;
 import java.util.Map;
 
 public class triangle implements  Shape {
     public Point position;
-    private Map<String, Double> properties;
+    private Map<String, Double> properties = new HashMap();
     private Color color;
     private Color fColor;
     int endx,endy;
+    public boolean tryDraw;
 
 
 
@@ -31,7 +33,8 @@ public class triangle implements  Shape {
     }
 
     public triangle() {
-
+        properties.put("endx",0D);
+        properties.put("endy",0D);
     }
 
 
@@ -66,6 +69,7 @@ public class triangle implements  Shape {
 
     @Override
     public void setProperties(Map<String, Double> properties) {
+
         this.properties = properties;
     }
 

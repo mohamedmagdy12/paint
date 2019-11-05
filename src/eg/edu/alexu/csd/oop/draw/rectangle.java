@@ -12,18 +12,22 @@ import javax.crypto.Cipher;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.HashMap;
 import java.util.Map;
 import java.awt.*;
 
 public class rectangle implements Shape{
     private Point position;
-    private Map<String, Double> properties;
+    private Map<String, Double> properties = new HashMap();
     private Color color;
     private Color fColor;
     private int length;
     private int width;
+    public boolean tryDraw;
 
     public rectangle() {
+        properties.put("length",0D);
+        properties.put("width",0D);
     }
 
     public rectangle(int x , int y, Color color, Color fColor, int length, int width) {
@@ -53,12 +57,12 @@ public class rectangle implements Shape{
 
     @Override
     public void setProperties(Map<String, Double> properties) {
-
+        this.properties = properties;
     }
 
     @Override
     public Map<String, Double> getProperties() {
-        return null;
+        return properties;
     }
 
     @Override
